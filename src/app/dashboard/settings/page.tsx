@@ -56,12 +56,12 @@ export default function SettingsPage() {
         {/* Form */}
         <div className="md:col-span-2 bg-card border border-[#263F78]/30 rounded-xl p-6 space-y-6">
           <h3 className="text-base font-medium text-white border-b border-[#263F78]/30 pb-3">Compute & Inference Cluster</h3>
-          
+
           <div className="space-y-4">
             <div>
               <label className="text-xs text-primary/70 block mb-1.5 uppercase tracking-wider font-mono">Compute Hardware Allocation</label>
-              <select 
-                value={gpuAllocation} 
+              <select
+                value={gpuAllocation}
                 onChange={e => setGpuAllocation(e.target.value)}
                 className="w-full bg-[#0D1C42] border border-[#263F78]/50 rounded-lg px-3 py-2.5 text-xs text-white outline-none focus:border-primary"
               >
@@ -76,14 +76,13 @@ export default function SettingsPage() {
               <label className="text-xs text-primary/70 block mb-1.5 uppercase tracking-wider font-mono">Floating Point Tensor Precision</label>
               <div className="grid grid-cols-3 gap-3">
                 {["fp32", "fp16", "bfloat16"].map(p => (
-                  <button 
+                  <button
                     key={p}
                     onClick={() => setPrecisionMode(p)}
-                    className={`py-2 px-3 rounded-lg text-xs font-mono uppercase transition-colors border ${
-                      precisionMode === p 
-                        ? "bg-[#263F78]/50 border-primary text-primary" 
+                    className={`py-2 px-3 rounded-lg text-xs font-mono uppercase transition-colors border ${precisionMode === p
+                        ? "bg-[#263F78]/50 border-primary text-primary"
                         : "bg-[#0D1C42]/50 border-[#263F78]/30 text-primary/60 hover:text-white"
-                    }`}
+                      }`}
                   >
                     {p}
                   </button>
@@ -93,7 +92,7 @@ export default function SettingsPage() {
 
             <div>
               <label className="text-xs text-primary/70 block mb-1.5 uppercase tracking-wider font-mono">Spectroscopic Ingestion Cache (GB)</label>
-              <input 
+              <input
                 type="number"
                 value={cacheSize}
                 onChange={e => setCacheSize(e.target.value)}
@@ -106,7 +105,7 @@ export default function SettingsPage() {
                 <div className="text-xs text-white font-medium">Automatic Observational Telemetry Sync</div>
                 <div className="text-[10px] text-primary/50">Polls DESI and ISRO archives every 6 hours for new releases</div>
               </div>
-              <input 
+              <input
                 type="checkbox"
                 checked={telemetrySync}
                 onChange={e => setTelemetrySync(e.target.checked)}

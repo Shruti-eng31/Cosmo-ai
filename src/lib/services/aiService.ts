@@ -12,10 +12,10 @@ export class AIService {
   static async askQuestion(query: string): Promise<AskCosmoResponse> {
     // TODO: Connect to FastAPI -> LLM + RAG backend
     console.log(`[AIService] Sending query: ${query}`);
-    
+
     // Simulating network delay
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     return {
       query,
       response: "Based on the DESI DR1 dataset, the relationship between redshift (z) and distance follows Hubble's Law. For the sample of 2.1M galaxies analyzed, we observe a linear correlation at low redshift, which curves at higher redshifts due to the accelerating expansion of the universe (Dark Energy).",

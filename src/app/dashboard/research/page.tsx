@@ -14,7 +14,7 @@ const researchItems = [
 export default function ResearchPage() {
   return (
     <div className="max-w-[1400px] mx-auto pb-12 h-full flex flex-col">
-      
+
       {/* Header Actions */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
@@ -43,9 +43,9 @@ export default function ResearchPage() {
                 <MoreVertical className="w-4 h-4" />
               </button>
             </div>
-            
+
             <h3 className="text-lg text-white font-medium mb-1 line-clamp-2">{item.title}</h3>
-            
+
             <div className="flex justify-between items-center mt-auto pt-6">
               <span className="text-[10px] uppercase tracking-widest text-primary/60 px-2 py-1 bg-[#263F78]/20 rounded border border-[#263F78]/30">
                 {item.type}

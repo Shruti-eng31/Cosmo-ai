@@ -3,34 +3,34 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  ArrowUpRight, 
-  CheckCircle2, 
-  ChevronRight, 
-  Clock, 
-  BrainCircuit, 
-  Activity, 
-  Filter, 
+import {
+  ArrowUpRight,
+  CheckCircle2,
+  ChevronRight,
+  Clock,
+  BrainCircuit,
+  Activity,
+  Filter,
   X,
   Play,
   RotateCw
 } from "lucide-react";
 
-export function MetricCard({ 
-  title, 
-  value, 
-  icon, 
+export function MetricCard({
+  title,
+  value,
+  icon,
   trend,
   href = "/dashboard"
-}: { 
-  title: string; 
-  value: string; 
-  icon: React.ReactNode; 
+}: {
+  title: string;
+  value: string;
+  icon: React.ReactNode;
   trend: string;
   href?: string;
 }) {
   return (
-    <Link 
+    <Link
       href={href}
       className="bg-[#0D1C42]/50 border border-[#263F78]/30 rounded-xl p-6 relative overflow-hidden group hover:border-primary/60 hover:bg-[#0D1C42]/80 transition-all block cursor-pointer"
     >
@@ -84,13 +84,13 @@ export function AIInsightsPanel() {
     <div className="bg-gradient-to-br from-[#0D1C42] to-[#010736] border border-[#263F78]/50 rounded-xl p-6 relative overflow-hidden flex flex-col justify-between h-full">
       {/* Background decoration */}
       <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-      
+
       <div className="flex items-center justify-between mb-4 relative z-10">
         <div className="flex items-center gap-2 text-primary">
           <BrainCircuit size={18} className="animate-pulse" />
           <h3 className="text-sm font-medium tracking-wide">AI Research Insights</h3>
         </div>
-        
+
         <div className="flex items-center gap-2">
           <button
             onClick={() => setInsightIndex((i) => (i + 1) % INSIGHTS.length)}
@@ -101,7 +101,7 @@ export function AIInsightsPanel() {
           </button>
         </div>
       </div>
-      
+
       <div className="relative z-10 space-y-4">
         <div className="inline-block px-2 py-0.5 rounded bg-primary/10 text-primary border border-primary/20 text-[10px] font-mono uppercase">
           {current.tag}
@@ -110,9 +110,9 @@ export function AIInsightsPanel() {
         <p className="text-xs text-primary/80 font-light leading-relaxed">
           &ldquo;{current.body}&rdquo;
         </p>
-        
+
         <div className="pt-2">
-          <Link 
+          <Link
             href={current.link}
             className="inline-flex items-center gap-2 text-primary hover:text-white transition-colors text-xs uppercase tracking-widest group"
           >
@@ -164,16 +164,15 @@ export function RecentAnalyses() {
               <button
                 key={s}
                 onClick={() => setFilter(s)}
-                className={`px-2 py-1 rounded transition-colors ${
-                  filter === s ? "bg-[#263F78] text-white" : "text-primary/60 hover:text-white"
-                }`}
+                className={`px-2 py-1 rounded transition-colors ${filter === s ? "bg-[#263F78] text-white" : "text-primary/60 hover:text-white"
+                  }`}
               >
                 {s}
               </button>
             ))}
           </div>
 
-          <Link 
+          <Link
             href="/dashboard/research"
             className="text-[10px] uppercase tracking-widest text-primary hover:text-white transition-colors"
           >
@@ -181,7 +180,7 @@ export function RecentAnalyses() {
           </Link>
         </div>
       </div>
-      
+
       <div className="flex-1 overflow-y-auto">
         <table className="w-full text-left border-collapse">
           <thead>
@@ -194,8 +193,8 @@ export function RecentAnalyses() {
           </thead>
           <tbody className="text-sm">
             {filtered.map((item) => (
-              <tr 
-                key={item.id} 
+              <tr
+                key={item.id}
                 className="border-b border-[#263F78]/10 hover:bg-[#263F78]/10 transition-colors group cursor-pointer"
                 onClick={() => setSelectedAnalysis(item)}
               >
@@ -210,11 +209,10 @@ export function RecentAnalyses() {
                 </td>
                 <td className="px-6 py-4 text-primary/60 font-light text-xs">{item.dataset}</td>
                 <td className="px-6 py-4">
-                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-widest border ${
-                    item.status === 'Completed' ? 'border-green-500/20 text-green-400 bg-green-500/5' :
-                    item.status === 'Processing' ? 'border-blue-500/20 text-blue-400 bg-blue-500/5' :
-                    'border-[#263F78] text-primary/60 bg-background/50'
-                  }`}>
+                  <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] uppercase tracking-widest border ${item.status === 'Completed' ? 'border-green-500/20 text-green-400 bg-green-500/5' :
+                      item.status === 'Processing' ? 'border-blue-500/20 text-blue-400 bg-blue-500/5' :
+                        'border-[#263F78] text-primary/60 bg-background/50'
+                    }`}>
                     {item.status === 'Completed' && <CheckCircle2 size={10} />}
                     {item.status === 'Processing' && <Activity size={10} className="animate-pulse" />}
                     {item.status === 'Queued' && <Clock size={10} />}
@@ -222,7 +220,7 @@ export function RecentAnalyses() {
                   </span>
                 </td>
                 <td className="px-6 py-4 text-right">
-                  <button 
+                  <button
                     onClick={(e) => { e.stopPropagation(); setSelectedAnalysis(item); }}
                     className="text-[10px] uppercase tracking-widest text-primary hover:text-white transition-colors"
                   >
@@ -239,13 +237,13 @@ export function RecentAnalyses() {
       <AnimatePresence>
         {selectedAnalysis && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
               className="bg-[#0D1C42] border border-[#263F78] rounded-2xl p-6 max-w-md w-full shadow-2xl relative"
             >
-              <button 
+              <button
                 onClick={() => setSelectedAnalysis(null)}
                 className="absolute top-4 right-4 text-primary/50 hover:text-white p-1"
               >
@@ -253,11 +251,10 @@ export function RecentAnalyses() {
               </button>
 
               <div className="flex items-center gap-2 mb-3">
-                <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-mono border ${
-                  selectedAnalysis.status === 'Completed' ? 'border-green-500/30 text-green-400 bg-green-500/10' :
-                  selectedAnalysis.status === 'Processing' ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' :
-                  'border-[#263F78] text-primary/60'
-                }`}>
+                <span className={`px-2 py-0.5 rounded text-[10px] uppercase font-mono border ${selectedAnalysis.status === 'Completed' ? 'border-green-500/30 text-green-400 bg-green-500/10' :
+                    selectedAnalysis.status === 'Processing' ? 'border-blue-500/30 text-blue-400 bg-blue-500/10' :
+                      'border-[#263F78] text-primary/60'
+                  }`}>
                   {selectedAnalysis.status}
                 </span>
                 <span className="text-xs text-primary/40">• {selectedAnalysis.time}</span>

@@ -5,35 +5,35 @@ import { RedshiftDistribution, GalaxyClassification, ObjectDistribution } from "
 export default function DashboardOverview() {
   return (
     <div className="space-y-6 max-w-[1600px] mx-auto pb-12">
-      
+
       {/* Top Metrics Row */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <MetricCard 
-          title="Total Objects" 
-          value="8.1M" 
-          icon={<Atom />} 
-          trend="+12% this week" 
+        <MetricCard
+          title="Total Objects"
+          value="8.1M"
+          icon={<Atom />}
+          trend="+12% this week"
           href="/dashboard/universe"
         />
-        <MetricCard 
-          title="Datasets" 
-          value="5" 
-          icon={<Database />} 
-          trend="+2 new sources" 
+        <MetricCard
+          title="Datasets"
+          value="5"
+          icon={<Database />}
+          trend="+2 new sources"
           href="/dashboard/explorer"
         />
-        <MetricCard 
-          title="AI Analyses" 
-          value="24" 
-          icon={<FileBarChart />} 
-          trend="+18% computing" 
+        <MetricCard
+          title="AI Analyses"
+          value="24"
+          icon={<FileBarChart />}
+          trend="+18% computing"
           href="/dashboard/ai-analysis"
         />
-        <MetricCard 
-          title="Research Queries" 
-          value="48" 
-          icon={<Search />} 
-          trend="+32% engagement" 
+        <MetricCard
+          title="Research Queries"
+          value="48"
+          icon={<Search />}
+          trend="+32% engagement"
           href="/dashboard/ask"
         />
       </div>

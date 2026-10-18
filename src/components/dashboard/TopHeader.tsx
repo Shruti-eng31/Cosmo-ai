@@ -2,18 +2,18 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { 
-  Search, 
-  Bell, 
-  Activity, 
-  Database, 
-  BrainCircuit, 
-  ScanEye, 
-  MessageSquare, 
-  Box, 
-  Globe2, 
-  Library, 
-  CheckCircle2, 
+import {
+  Search,
+  Bell,
+  Activity,
+  Database,
+  BrainCircuit,
+  ScanEye,
+  MessageSquare,
+  Box,
+  Globe2,
+  Library,
+  CheckCircle2,
   X,
   ChevronRight
 } from "lucide-react";
@@ -27,7 +27,6 @@ const PAGE_TITLES: Record<string, { title: string, subtitle: string }> = {
   "/dashboard/vision": { title: "Vision AI", subtitle: "Analyze deep space imagery with Vision Transformers." },
   "/dashboard/ask": { title: "Ask COSMO AI", subtitle: "Your personal cosmological research assistant." },
   "/dashboard/universe": { title: "3D Universe", subtitle: "Interactive cosmic visualization and mapping." },
-  "/dashboard/simulations": { title: "Cosmological Simulations", subtitle: "Run parameter-driven N-body simulations." },
   "/dashboard/research": { title: "Research Workspace", subtitle: "Organize your findings, saved queries and datasets." },
 };
 
@@ -38,7 +37,6 @@ const SEARCH_ITEMS = [
   { title: "Deep Learning Redshift Regressor", category: "AI Tool", href: "/dashboard/ai-analysis", icon: <BrainCircuit size={16} /> },
   { title: "Vision Transformer Galaxy Morphology", category: "Vision Tool", href: "/dashboard/vision", icon: <ScanEye size={16} /> },
   { title: "Dark Energy Equation of State w(z)", category: "Assistant Query", href: "/dashboard/ask", icon: <MessageSquare size={16} /> },
-  { title: "N-Body Hydrodynamical Simulation", category: "Simulation", href: "/dashboard/simulations", icon: <Box size={16} /> },
   { title: "3D Cosmic Web & Filament Map", category: "3D Universe", href: "/dashboard/universe", icon: <Globe2 size={16} /> },
   { title: "Hubble Tension (H0) Research Notebook", category: "Research Workspace", href: "/dashboard/research", icon: <Library size={16} /> },
 ];
@@ -86,7 +84,7 @@ export default function TopHeader() {
   }, []);
 
   // Filter search items
-  const filteredSearchItems = SEARCH_ITEMS.filter(item => 
+  const filteredSearchItems = SEARCH_ITEMS.filter(item =>
     item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     item.category.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -105,7 +103,7 @@ export default function TopHeader() {
 
   return (
     <header className="h-20 bg-background/80 backdrop-blur-md border-b border-[#263F78]/30 flex items-center justify-between px-8 sticky top-0 z-40">
-      
+
       {/* Title Area */}
       <div className="flex flex-col">
         <h1 className="text-xl font-light text-white tracking-wide">{title}</h1>
@@ -114,7 +112,7 @@ export default function TopHeader() {
 
       {/* Global Search Bar */}
       <div className="flex-1 max-w-md mx-8 relative">
-        <div 
+        <div
           onClick={() => setIsSearchOpen(true)}
           className="relative group cursor-pointer"
         >
@@ -136,7 +134,7 @@ export default function TopHeader() {
 
       {/* Right Controls */}
       <div className="flex items-center gap-6 relative">
-        
+
         {/* System Status Pill */}
         <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-500/20 bg-green-500/5" title="Latency: 14ms • Compute: 8 GPU Nodes Operational">
           <Activity size={14} className="text-green-400 animate-pulse" />
@@ -145,7 +143,7 @@ export default function TopHeader() {
 
         {/* Notifications Button */}
         <div className="relative">
-          <button 
+          <button
             onClick={() => setIsNotificationsOpen(prev => !prev)}
             className="relative w-10 h-10 rounded-full hover:bg-[#263F78]/20 flex items-center justify-center text-primary/60 hover:text-primary transition-colors"
             title="Notifications"
@@ -175,7 +173,7 @@ export default function TopHeader() {
                     )}
                   </div>
                   {unreadCount > 0 && (
-                    <button 
+                    <button
                       onClick={markAllNotificationsRead}
                       className="text-[10px] uppercase tracking-wider text-primary/70 hover:text-primary transition-colors"
                     >
@@ -186,11 +184,10 @@ export default function TopHeader() {
 
                 <div className="space-y-2 max-h-72 overflow-y-auto">
                   {notifications.map((n) => (
-                    <div 
+                    <div
                       key={n.id}
-                      className={`p-2.5 rounded-lg border transition-colors ${
-                        n.read ? "bg-background/20 border-transparent text-primary/60" : "bg-background/50 border-[#263F78]/50 text-white"
-                      }`}
+                      className={`p-2.5 rounded-lg border transition-colors ${n.read ? "bg-background/20 border-transparent text-primary/60" : "bg-background/50 border-[#263F78]/50 text-white"
+                        }`}
                     >
                       <div className="flex justify-between items-start mb-1">
                         <span className="text-xs font-medium text-white">{n.title}</span>
@@ -203,7 +200,7 @@ export default function TopHeader() {
 
                 <div className="pt-3 mt-3 border-t border-[#263F78]/30 flex justify-between items-center text-[10px] text-primary/50">
                   <span>COSMO Realtime Ingestion</span>
-                  <button 
+                  <button
                     onClick={() => setIsNotificationsOpen(false)}
                     className="text-primary hover:underline"
                   >
@@ -221,7 +218,7 @@ export default function TopHeader() {
       <AnimatePresence>
         {isSearchOpen && (
           <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-black/60 backdrop-blur-sm">
-            <motion.div 
+            <motion.div
               initial={{ scale: 0.95, opacity: 0, y: -10 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.95, opacity: 0, y: -10 }}
@@ -239,7 +236,7 @@ export default function TopHeader() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="flex-1 bg-transparent text-sm text-white placeholder:text-primary/40 outline-none"
                 />
-                <button 
+                <button
                   onClick={() => setIsSearchOpen(false)}
                   className="p-1 rounded text-primary/40 hover:text-white"
                 >

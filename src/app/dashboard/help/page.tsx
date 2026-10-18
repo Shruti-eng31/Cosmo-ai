@@ -33,7 +33,7 @@ export default function HelpPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Link 
+        <Link
           href="/dashboard/ask"
           className="bg-card border border-[#263F78]/30 hover:border-primary/50 transition-all rounded-xl p-6 flex flex-col justify-between group"
         >
@@ -49,7 +49,7 @@ export default function HelpPage() {
           </div>
         </Link>
 
-        <Link 
+        <Link
           href="/dashboard/docs"
           className="bg-card border border-[#263F78]/30 hover:border-primary/50 transition-all rounded-xl p-6 flex flex-col justify-between group"
         >

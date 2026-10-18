@@ -2,24 +2,24 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import { 
-  LayoutDashboard, 
-  Database, 
-  BrainCircuit, 
-  ScanEye, 
-  MessageSquare, 
-  Box, 
-  Globe2, 
-  Library, 
-  User, 
-  ArrowUpRight, 
-  Search, 
-  Play, 
-  Sparkles, 
-  CheckCircle2, 
-  ChevronRight, 
-  Sliders, 
-  Send, 
+import {
+  LayoutDashboard,
+  Database,
+  BrainCircuit,
+  ScanEye,
+  MessageSquare,
+  Box,
+  Globe2,
+  Library,
+  User,
+  ArrowUpRight,
+  Search,
+  Play,
+  Sparkles,
+  CheckCircle2,
+  ChevronRight,
+  Sliders,
+  Send,
   Download,
   Activity,
   Layers,
@@ -43,14 +43,13 @@ const NAV_ITEMS: TabItem[] = [
   { id: "ai", icon: <BrainCircuit className="w-4 h-4" />, label: "AI Analysis", route: "/dashboard/ai-analysis" },
   { id: "vision", icon: <ScanEye className="w-4 h-4" />, label: "Image Analysis", route: "/dashboard/vision" },
   { id: "ask", icon: <MessageSquare className="w-4 h-4" />, label: "Ask COSMO", route: "/dashboard/ask" },
-  { id: "simulations", icon: <Box className="w-4 h-4" />, label: "Simulations", route: "/dashboard/simulations" },
   { id: "universe", icon: <Globe2 className="w-4 h-4" />, label: "3D Universe", route: "/dashboard/universe" },
   { id: "research", icon: <Library className="w-4 h-4" />, label: "Research", route: "/dashboard/research" },
 ];
 
 export default function DashboardSection() {
   const [activeTab, setActiveTab] = useState<TabId>("overview");
-  
+
   // Overview Tab State
   const [overviewMode, setOverviewMode] = useState<"cosmic" | "isro">("cosmic");
   const [hoveredBarIndex, setHoveredBarIndex] = useState<number | null>(null);
@@ -86,7 +85,7 @@ export default function DashboardSection() {
       const missionName = item["Launch Date"] || "";
       const vehicle = item["Launch Vehicle.1"] || "";
       const app = item["Application"] || "";
-      const matchesSearch = 
+      const matchesSearch =
         missionName.toLowerCase().includes(explorerQuery.toLowerCase()) ||
         vehicle.toLowerCase().includes(explorerQuery.toLowerCase()) ||
         app.toLowerCase().includes(explorerQuery.toLowerCase());
@@ -139,16 +138,16 @@ export default function DashboardSection() {
 
   // Universe Fate calculation
   const totalOmega = omegaM + omegaLambda;
-  const universeFate = totalOmega > 1.05 
-    ? "Closed Universe (Eventual Big Crunch)" 
-    : totalOmega < 0.95 
-    ? "Open Universe (Continuous Expansion)" 
-    : "Flat Universe (ΛCDM Accelerated Expansion)";
+  const universeFate = totalOmega > 1.05
+    ? "Closed Universe (Eventual Big Crunch)"
+    : totalOmega < 0.95
+      ? "Open Universe (Continuous Expansion)"
+      : "Flat Universe (ΛCDM Accelerated Expansion)";
 
   return (
     <section className="py-24 relative bg-background border-t border-border" id="dashboard-section">
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Section Heading with Direct Launch Button */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
@@ -176,7 +175,7 @@ export default function DashboardSection() {
 
         {/* Dashboard Main Console Frame */}
         <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[660px]">
-          
+
           {/* Sidebar Navigation */}
           <div className="w-full md:w-64 border-r border-border bg-background/60 flex flex-col p-4 shrink-0">
             <div className="flex items-center justify-between px-2 py-3 mb-4 border-b border-border">
@@ -190,7 +189,7 @@ export default function DashboardSection() {
                 LIVE
               </span>
             </div>
-            
+
             {/* Nav Items */}
             <nav className="flex-1 space-y-1">
               {NAV_ITEMS.map((item) => {
@@ -199,11 +198,10 @@ export default function DashboardSection() {
                   <button
                     key={item.id}
                     onClick={() => setActiveTab(item.id)}
-                    className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium transition-all text-left ${
-                      isActive 
-                        ? "bg-accent/25 text-primary border border-accent/40 shadow-sm" 
+                    className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium transition-all text-left ${isActive
+                        ? "bg-accent/25 text-primary border border-accent/40 shadow-sm"
                         : "text-primary/60 hover:bg-border/30 hover:text-white"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center gap-3">
                       {item.icon}
@@ -234,12 +232,12 @@ export default function DashboardSection() {
 
           {/* Main Dynamic Content Area */}
           <div className="flex-1 p-6 md:p-8 bg-card flex flex-col overflow-y-auto">
-            
+
             {/* ==================== 1. OVERVIEW TAB ==================== */}
             {activeTab === "overview" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-6 flex-1 flex flex-col"
               >
                 {/* Header with Mode Switcher */}
@@ -248,26 +246,24 @@ export default function DashboardSection() {
                     <h3 className="text-lg text-white font-medium">Cosmology Research Overview</h3>
                     <p className="text-xs text-primary/60">Live telemetry and astronomical metric aggregation</p>
                   </div>
-                  
+
                   {/* Toggle between Cosmic Survey and Real ISRO Data */}
                   <div className="flex items-center gap-1 p-1 bg-background border border-border rounded-lg text-xs">
                     <button
                       onClick={() => setOverviewMode("cosmic")}
-                      className={`px-3 py-1.5 rounded-md transition-all font-medium ${
-                        overviewMode === "cosmic" 
-                          ? "bg-primary text-background shadow" 
+                      className={`px-3 py-1.5 rounded-md transition-all font-medium ${overviewMode === "cosmic"
+                          ? "bg-primary text-background shadow"
                           : "text-primary/60 hover:text-white"
-                      }`}
+                        }`}
                     >
                       Cosmic Survey (DESI / GAIA)
                     </button>
                     <button
                       onClick={() => setOverviewMode("isro")}
-                      className={`px-3 py-1.5 rounded-md transition-all font-medium flex items-center gap-1.5 ${
-                        overviewMode === "isro" 
-                          ? "bg-primary text-background shadow" 
+                      className={`px-3 py-1.5 rounded-md transition-all font-medium flex items-center gap-1.5 ${overviewMode === "isro"
+                          ? "bg-primary text-background shadow"
                           : "text-primary/60 hover:text-white"
-                      }`}
+                        }`}
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                       ISRO Launches (Real Data)
@@ -310,7 +306,7 @@ export default function DashboardSection() {
 
                 {/* Charts Row */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 flex-1">
-                  
+
                   {/* Left Chart: Redshift / Launch Timeline */}
                   <div className="lg:col-span-2 bg-background/50 border border-border rounded-xl p-5 flex flex-col justify-between">
                     <div className="flex justify-between items-center mb-4">
@@ -339,17 +335,16 @@ export default function DashboardSection() {
                           const count = Math.round(h * 2000);
                           const isHovered = hoveredBarIndex === i;
                           return (
-                            <div 
-                              key={i} 
+                            <div
+                              key={i}
                               className="flex-1 h-full flex items-end group relative cursor-pointer"
                               onMouseEnter={() => setHoveredBarIndex(i)}
                               onMouseLeave={() => setHoveredBarIndex(null)}
                             >
                               <div
                                 style={{ height: `${h}%` }}
-                                className={`w-full rounded-t-sm transition-all duration-300 ${
-                                  isHovered ? "bg-primary" : "bg-accent/40 group-hover:bg-accent/70"
-                                }`}
+                                className={`w-full rounded-t-sm transition-all duration-300 ${isHovered ? "bg-primary" : "bg-accent/40 group-hover:bg-accent/70"
+                                  }`}
                               />
                               {isHovered && (
                                 <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-[#0D1C42] border border-primary/50 px-2 py-1 rounded text-[10px] text-white whitespace-nowrap shadow-lg z-20">
@@ -378,17 +373,16 @@ export default function DashboardSection() {
                           const heightPct = (d.count / 40) * 100;
                           const isHovered = hoveredBarIndex === i;
                           return (
-                            <div 
-                              key={i} 
+                            <div
+                              key={i}
                               className="flex-1 h-full flex flex-col justify-end items-center group relative cursor-pointer"
                               onMouseEnter={() => setHoveredBarIndex(i)}
                               onMouseLeave={() => setHoveredBarIndex(null)}
                             >
-                              <div 
+                              <div
                                 style={{ height: `${heightPct}%` }}
-                                className={`w-full rounded-t-md transition-all duration-300 ${
-                                  isHovered ? "bg-primary" : "bg-primary/50 group-hover:bg-primary/80"
-                                }`}
+                                className={`w-full rounded-t-md transition-all duration-300 ${isHovered ? "bg-primary" : "bg-primary/50 group-hover:bg-primary/80"
+                                  }`}
                               />
                               <span className="text-[10px] text-primary/70 mt-2 font-mono">{d.decade}</span>
                               {isHovered && (
@@ -403,7 +397,7 @@ export default function DashboardSection() {
                       </div>
                     )}
                   </div>
-                  
+
                   {/* Right Chart: Classification breakdown */}
                   <div className="bg-background/50 border border-border rounded-xl p-5 flex flex-col justify-between">
                     <div>
@@ -512,9 +506,9 @@ export default function DashboardSection() {
 
             {/* ==================== 2. DATA EXPLORER TAB ==================== */}
             {activeTab === "explorer" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-4 flex-1 flex flex-col"
               >
                 <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-3 border-b border-border pb-4">
@@ -542,18 +536,17 @@ export default function DashboardSection() {
                       className="w-full bg-background border border-border rounded-lg pl-9 pr-4 py-2 text-xs text-white placeholder:text-primary/30 outline-none focus:border-primary/50"
                     />
                   </div>
-                  
+
                   {/* Category Chips */}
                   <div className="flex gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0">
                     {["All", "Communication", "Earth", "Planetary", "Navigation"].map((tag) => (
                       <button
                         key={tag}
                         onClick={() => setExplorerFilter(tag)}
-                        className={`px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition-colors ${
-                          explorerFilter === tag 
-                            ? "bg-primary text-background font-medium" 
+                        className={`px-2.5 py-1.5 rounded-lg text-xs whitespace-nowrap transition-colors ${explorerFilter === tag
+                            ? "bg-primary text-background font-medium"
                             : "bg-background/50 border border-border text-primary/60 hover:text-white"
-                        }`}
+                          }`}
                       >
                         {tag}
                       </button>
@@ -594,11 +587,10 @@ export default function DashboardSection() {
                                 </span>
                               </td>
                               <td className="py-2.5 px-3">
-                                <span className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded ${
-                                  isSuccess 
-                                    ? "bg-green-500/10 text-green-400 border border-green-500/20" 
+                                <span className={`inline-flex items-center gap-1 text-[10px] px-2 py-0.5 rounded ${isSuccess
+                                    ? "bg-green-500/10 text-green-400 border border-green-500/20"
                                     : "bg-red-500/10 text-red-400 border border-red-500/20"
-                                }`}>
+                                  }`}>
                                   {isSuccess && <CheckCircle2 className="w-2.5 h-2.5" />}
                                   {remarks}
                                 </span>
@@ -622,9 +614,9 @@ export default function DashboardSection() {
 
             {/* ==================== 3. AI ANALYSIS TAB ==================== */}
             {activeTab === "ai" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-6 flex-1 flex flex-col"
               >
                 <div className="flex justify-between items-center border-b border-border pb-4">
@@ -647,7 +639,7 @@ export default function DashboardSection() {
                       <label className="text-[10px] uppercase tracking-widest text-primary/60 block mb-1">
                         Select Neural Architecture
                       </label>
-                      <select 
+                      <select
                         value={selectedAiModel}
                         onChange={(e) => setSelectedAiModel(e.target.value)}
                         className="w-full bg-background border border-border rounded-lg px-3 py-2 text-xs text-white outline-none focus:border-primary/50"
@@ -707,7 +699,7 @@ export default function DashboardSection() {
                               <span className="font-mono">72%</span>
                             </div>
                             <div className="w-full h-2 bg-border rounded-full overflow-hidden">
-                              <motion.div 
+                              <motion.div
                                 className="h-full bg-primary"
                                 initial={{ width: "10%" }}
                                 animate={{ width: "95%" }}
@@ -762,9 +754,9 @@ export default function DashboardSection() {
 
             {/* ==================== 4. VISION TAB ==================== */}
             {activeTab === "vision" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-4 flex-1 flex flex-col"
               >
                 <div className="flex justify-between items-center border-b border-border pb-4">
@@ -790,11 +782,10 @@ export default function DashboardSection() {
                     <button
                       key={target.id}
                       onClick={() => setSelectedImageTarget(target.id as any)}
-                      className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${
-                        selectedImageTarget === target.id 
-                          ? "bg-primary text-background font-medium" 
+                      className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${selectedImageTarget === target.id
+                          ? "bg-primary text-background font-medium"
                           : "bg-background/50 border border-border text-primary/60 hover:text-white"
-                      }`}
+                        }`}
                     >
                       {target.name}
                     </button>
@@ -806,16 +797,16 @@ export default function DashboardSection() {
                   <div className="md:col-span-2 relative rounded-xl border border-border overflow-hidden min-h-[260px] bg-black">
                     <img
                       src={
-                        selectedImageTarget === "jwst" 
+                        selectedImageTarget === "jwst"
                           ? "/images/jwst.jpg"
                           : selectedImageTarget === "andromeda"
-                          ? "/images/gaia.jpg"
-                          : "/images/desi.jpg"
+                            ? "/images/gaia.jpg"
+                            : "/images/desi.jpg"
                       }
                       alt="Astronomical Target"
                       className="w-full h-full object-cover opacity-85"
                     />
-                    
+
                     {/* Simulated Vision Bounding Box */}
                     <div className="absolute top-1/4 left-1/3 w-36 h-36 border-2 border-primary/80 rounded-lg pointer-events-none animate-pulse flex flex-col justify-between p-1.5">
                       <span className="text-[9px] bg-primary text-background px-1.5 py-0.5 rounded font-mono font-bold self-start">
@@ -864,9 +855,9 @@ export default function DashboardSection() {
 
             {/* ==================== 5. ASK COSMO TAB ==================== */}
             {activeTab === "ask" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-4 flex-1 flex flex-col h-full"
               >
                 <div className="flex justify-between items-center border-b border-border pb-4">
@@ -902,8 +893,8 @@ export default function DashboardSection() {
                 {/* Chat Stream Window */}
                 <div className="flex-1 bg-background/50 border border-border rounded-xl p-4 overflow-y-auto space-y-3 min-h-[220px] max-h-[320px]">
                   {askHistory.map((msg, i) => (
-                    <div 
-                      key={i} 
+                    <div
+                      key={i}
                       className={`flex gap-3 text-xs ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                     >
                       {msg.role === "assistant" && (
@@ -911,11 +902,10 @@ export default function DashboardSection() {
                           AI
                         </div>
                       )}
-                      <div className={`p-3 rounded-xl max-w-lg leading-relaxed ${
-                        msg.role === "user" 
-                          ? "bg-primary text-background font-medium rounded-tr-none" 
+                      <div className={`p-3 rounded-xl max-w-lg leading-relaxed ${msg.role === "user"
+                          ? "bg-primary text-background font-medium rounded-tr-none"
                           : "bg-card border border-border text-white rounded-tl-none font-light"
-                      }`}>
+                        }`}>
                         {msg.text}
                       </div>
                     </div>
@@ -929,7 +919,7 @@ export default function DashboardSection() {
                 </div>
 
                 {/* Input Bar */}
-                <form 
+                <form
                   onSubmit={(e) => { e.preventDefault(); handleSendPrompt(); }}
                   className="flex gap-2"
                 >
@@ -954,9 +944,9 @@ export default function DashboardSection() {
 
             {/* ==================== 6. SIMULATIONS & UNIVERSE TAB ==================== */}
             {(activeTab === "simulations" || activeTab === "universe") && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-6 flex-1 flex flex-col"
               >
                 <div className="flex justify-between items-center border-b border-border pb-4">
@@ -980,13 +970,13 @@ export default function DashboardSection() {
                         <span className="text-white font-medium">Matter Density (Ωm)</span>
                         <span className="font-mono text-primary">{omegaM.toFixed(3)}</span>
                       </div>
-                      <input 
-                        type="range" 
-                        min="0" 
-                        max="1" 
+                      <input
+                        type="range"
+                        min="0"
+                        max="1"
                         step="0.01"
-                        value={omegaM} 
-                        onChange={(e) => setOmegaM(parseFloat(e.target.value))} 
+                        value={omegaM}
+                        onChange={(e) => setOmegaM(parseFloat(e.target.value))}
                         className="w-full accent-primary cursor-pointer"
                       />
                     </div>
@@ -996,13 +986,13 @@ export default function DashboardSection() {
                         <span className="text-white font-medium">Dark Energy Density (ΩΛ)</span>
                         <span className="font-mono text-accent">{omegaLambda.toFixed(3)}</span>
                       </div>
-                      <input 
-                        type="range" 
-                        min="0" 
-                        max="1" 
+                      <input
+                        type="range"
+                        min="0"
+                        max="1"
                         step="0.01"
-                        value={omegaLambda} 
-                        onChange={(e) => setOmegaLambda(parseFloat(e.target.value))} 
+                        value={omegaLambda}
+                        onChange={(e) => setOmegaLambda(parseFloat(e.target.value))}
                         className="w-full accent-accent cursor-pointer"
                       />
                     </div>
@@ -1012,13 +1002,13 @@ export default function DashboardSection() {
                         <span className="text-white font-medium">Hubble Constant (H0)</span>
                         <span className="font-mono text-blue-400">{h0.toFixed(1)} km/s/Mpc</span>
                       </div>
-                      <input 
-                        type="range" 
-                        min="50" 
-                        max="90" 
+                      <input
+                        type="range"
+                        min="50"
+                        max="90"
                         step="0.5"
-                        value={h0} 
-                        onChange={(e) => setH0(parseFloat(e.target.value))} 
+                        value={h0}
+                        onChange={(e) => setH0(parseFloat(e.target.value))}
                         className="w-full accent-blue-400 cursor-pointer"
                       />
                     </div>
@@ -1070,9 +1060,9 @@ export default function DashboardSection() {
 
             {/* ==================== 7. RESEARCH TAB ==================== */}
             {activeTab === "research" && (
-              <motion.div 
-                initial={{ opacity: 0, y: 8 }} 
-                animate={{ opacity: 1, y: 0 }} 
+              <motion.div
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
                 className="space-y-4 flex-1 flex flex-col"
               >
                 <div className="flex justify-between items-center border-b border-border pb-4">
@@ -1104,7 +1094,7 @@ export default function DashboardSection() {
                         </div>
                         <h4 className="text-sm text-white font-medium mb-2">{doc.title}</h4>
                       </div>
-                      <Link 
+                      <Link
                         href="/dashboard/research"
                         className="text-xs text-primary hover:text-white flex items-center gap-1 mt-4"
                       >

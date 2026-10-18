@@ -58,10 +58,10 @@ export default function AskCosmoPage() {
 
   return (
     <div className="max-w-[1200px] mx-auto pb-6 h-full flex flex-col relative">
-      
+
       {/* Chat Area */}
       <div className="flex-1 overflow-y-auto mb-6 pr-4 space-y-8">
-        
+
         {messages.length === 0 && !isTyping ? (
           <div className="h-full flex flex-col items-center justify-center text-center">
             <div className="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-6">
@@ -69,7 +69,7 @@ export default function AskCosmoPage() {
             </div>
             <h2 className="text-2xl font-light text-white mb-2">Ask COSMO AI</h2>
             <p className="text-primary/60 text-sm max-w-md mb-12">Your personal cosmological research assistant. Connected to live astronomical databases and trained on scientific papers.</p>
-            
+
             <div className="grid grid-cols-2 gap-4 w-full max-w-2xl text-left">
               {[
                 "What is the relationship between galaxy redshift and distance?",
@@ -77,7 +77,7 @@ export default function AskCosmoPage() {
                 "Explain the tension in the Hubble Constant measurements.",
                 "Generate a visualization of the local group."
               ].map((q, i) => (
-                <button 
+                <button
                   key={i}
                   onClick={() => setInput(q)}
                   className="p-4 bg-[#0D1C42]/30 border border-[#263F78]/30 rounded-xl hover:bg-[#263F78]/20 hover:border-primary/30 transition-colors group flex flex-col"
@@ -91,7 +91,7 @@ export default function AskCosmoPage() {
         ) : (
           <div className="space-y-8 pb-4">
             {messages.map(msg => (
-              <motion.div 
+              <motion.div
                 key={msg.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -106,13 +106,12 @@ export default function AskCosmoPage() {
                     US
                   </div>
                 )}
-                
+
                 <div className={`space-y-4 ${msg.role === 'user' ? 'text-right' : ''}`}>
-                  <div className={`inline-block p-4 rounded-2xl text-sm font-light leading-relaxed ${
-                    msg.role === 'user' 
-                      ? 'bg-[#263F78] text-white rounded-tr-sm' 
+                  <div className={`inline-block p-4 rounded-2xl text-sm font-light leading-relaxed ${msg.role === 'user'
+                      ? 'bg-[#263F78] text-white rounded-tr-sm'
                       : 'bg-[#0D1C42]/50 border border-[#263F78]/30 text-white rounded-tl-sm'
-                  }`}>
+                    }`}>
                     {msg.content}
                   </div>
 
@@ -124,7 +123,7 @@ export default function AskCosmoPage() {
                           <ChartIcon className="w-8 h-8 text-primary/20 group-hover:scale-110 transition-transform" />
                           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5" />
                           <div className="absolute bottom-4 left-4 right-4 h-1/2 border-l border-b border-[#263F78]/50 flex items-end">
-                             <div className="w-full h-[2px] bg-primary/50 origin-bottom-left -rotate-[35deg] ml-1 shadow-[0_0_10px_var(--color-primary)]" />
+                            <div className="w-full h-[2px] bg-primary/50 origin-bottom-left -rotate-[35deg] ml-1 shadow-[0_0_10px_var(--color-primary)]" />
                           </div>
                         </div>
                       )}
@@ -151,7 +150,7 @@ export default function AskCosmoPage() {
                 </div>
                 <div className="bg-[#0D1C42]/50 border border-[#263F78]/30 text-primary/60 rounded-2xl rounded-tl-sm p-4 text-xs font-mono space-y-2">
                   <AnimatePresence mode="popLayout">
-                    <motion.div 
+                    <motion.div
                       key={typingStep}
                       initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
@@ -171,16 +170,16 @@ export default function AskCosmoPage() {
 
       {/* Input Area */}
       <div className="relative mt-auto shrink-0 bg-[#0D1C42]/80 backdrop-blur-md rounded-2xl border border-[#263F78]/50 p-2 shadow-2xl">
-        <input 
-          type="text" 
+        <input
+          type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          placeholder="Ask a cosmological question..." 
+          placeholder="Ask a cosmological question..."
           className="w-full bg-transparent border-none py-3 pl-4 pr-14 text-sm text-white placeholder:text-primary/30 outline-none font-light"
           disabled={isTyping}
         />
-        <button 
+        <button
           onClick={handleSend}
           disabled={!input.trim() || isTyping}
           className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-background disabled:opacity-50 disabled:bg-[#263F78] hover:scale-105 transition-all"

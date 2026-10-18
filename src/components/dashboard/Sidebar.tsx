@@ -39,7 +39,7 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 h-screen bg-[#0D1C42] border-r border-[#263F78] flex flex-col shrink-0">
-      
+
       {/* Logo */}
       <div className="h-20 flex items-center px-6 border-b border-[#263F78]/50">
         <Link href="/" className="flex items-center gap-3 group">
@@ -56,14 +56,13 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
-              className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all duration-300 ${
-                isActive 
-                  ? "bg-[#263F78]/50 text-[#FFF3CF]" 
+              className={`relative flex items-center gap-3 px-4 py-3 rounded-xl text-sm transition-all duration-300 ${isActive
+                  ? "bg-[#263F78]/50 text-[#FFF3CF]"
                   : "text-[#FFF3CF]/60 hover:bg-[#263F78]/20 hover:text-[#FFF3CF]"
-              }`}
+                }`}
             >
               {isActive && (
-                <motion.div 
+                <motion.div
                   layoutId="activeNav"
                   className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#FFF3CF] rounded-r-full"
                 />

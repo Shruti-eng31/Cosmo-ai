@@ -14,7 +14,7 @@ export class DatasetService {
   static async getDatasets(): Promise<DatasetInfo[]> {
     // TODO: Connect to FastAPI -> PostgreSQL metadata DB
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     return [
       {
         id: "desi_dr1",

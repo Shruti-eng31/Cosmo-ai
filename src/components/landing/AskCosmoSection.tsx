@@ -25,7 +25,7 @@ export default function AskCosmoSection() {
   return (
     <section className="py-32 relative bg-background">
       <div className="container mx-auto px-6 relative z-10">
-        
+
         <div className="mb-12">
           <h2 className="text-3xl font-light text-white mb-2">
             Ask the <span className="text-primary font-medium">Cosmos</span>
@@ -36,7 +36,7 @@ export default function AskCosmoSection() {
         </div>
 
         <div className="rounded-2xl border border-border bg-card overflow-hidden shadow-2xl">
-          
+
           {/* User Query Area */}
           <div className="flex justify-end p-6 border-b border-border bg-card-hover/30">
             <div className="bg-border text-white px-6 py-3 rounded-full rounded-tr-sm text-sm font-light">
@@ -45,25 +45,25 @@ export default function AskCosmoSection() {
           </div>
 
           <div className="p-8 grid lg:grid-cols-2 gap-12">
-            
+
             {/* Left: AI Process & Summary */}
             <div className="space-y-8">
               <div className="flex items-center gap-3 text-primary">
                 <Atom className="w-6 h-6" />
                 <span className="font-medium tracking-wide">COSMO AI</span>
               </div>
-              
+
               <div className="space-y-3">
                 {steps.map((s, i) => (
-                  <motion.div 
+                  <motion.div
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: step >= i ? 1 : 0, x: step >= i ? 0 : -10 }}
-                    key={i} 
+                    key={i}
                     className={`flex items-center gap-3 text-sm ${i === step && step !== 4 ? "text-primary" : "text-primary/60"}`}
                   >
                     {step > i || step === 4 ? (
                       <div className="w-4 h-4 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center shrink-0">
-                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
                       </div>
                     ) : (
                       <div className="w-4 h-4 rounded-full border border-current opacity-50 shrink-0" />
@@ -74,7 +74,7 @@ export default function AskCosmoSection() {
               </div>
 
               {step === 4 && (
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   className="pt-6 border-t border-border"
@@ -82,7 +82,7 @@ export default function AskCosmoSection() {
                   <p className="text-sm text-primary/80 font-light leading-relaxed mb-4">
                     The graph shows that redshift increases with distance, which is consistent with the expanding universe. This follows Hubble's Law (<span className="italic">v = H₀d</span>).
                   </p>
-                  
+
                   <div className="space-y-2">
                     <span className="text-xs uppercase tracking-widest text-primary/40 block mb-2">Sources:</span>
                     <ol className="text-xs text-primary/60 space-y-1 list-decimal list-inside">
@@ -98,15 +98,15 @@ export default function AskCosmoSection() {
             {/* Right: Graph */}
             <div className="border border-border rounded-xl bg-background/50 p-6 flex flex-col relative overflow-hidden">
               <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(23,43,107,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,43,107,0.1)_1px,transparent_1px)] bg-[size:1rem_1rem]" />
-              
+
               <h3 className="text-sm text-white font-medium mb-8 relative z-10 text-center">Redshift vs Distance</h3>
-              
+
               <div className="flex-1 relative z-10">
                 {/* Y Axis Label */}
                 <div className="absolute -left-4 top-1/2 -translate-y-1/2 -rotate-90 text-[10px] text-primary/40 uppercase tracking-widest">
                   Redshift (z)
                 </div>
-                
+
                 {/* Y Axis ticks */}
                 <div className="absolute left-4 top-0 bottom-8 flex flex-col justify-between text-[10px] text-primary/40 text-right pr-2 border-r border-border h-full">
                   <span>2.0</span>
@@ -153,7 +153,7 @@ export default function AskCosmoSection() {
                   <span>8,000</span>
                   <span>10,000</span>
                 </div>
-                
+
                 {/* X Axis Label */}
                 <div className="absolute left-0 right-0 bottom-0 text-center text-[10px] text-primary/40 uppercase tracking-widest pt-2">
                   Distance (Mpc)
@@ -166,9 +166,9 @@ export default function AskCosmoSection() {
           {/* Input Area */}
           <div className="p-4 border-t border-border bg-card-hover/20">
             <div className="relative flex items-center">
-              <input 
-                type="text" 
-                placeholder="Ask a follow-up question..." 
+              <input
+                type="text"
+                placeholder="Ask a follow-up question..."
                 className="w-full bg-transparent border-none py-2 px-4 text-sm text-white placeholder:text-primary/30 outline-none font-light"
                 disabled
               />
