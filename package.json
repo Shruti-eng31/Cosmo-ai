@@ -2,6 +2,12 @@
   "name": "cosmo-ai",
   "version": "0.1.0",
   "private": true,
+  "contributors": [
+    {
+      "name": "Ashish Chaudhary",
+      "url": "https://github.com/ashishchaudhary8a-code"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
