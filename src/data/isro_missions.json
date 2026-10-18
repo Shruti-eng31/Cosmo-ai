@@ -1,0 +1,1127 @@
+[
+  {
+    "SL No": 125,
+    "Launch Date": "Aditya-L1",
+    "Launch Vehicle": "02-Sep-23",
+    "Launch Vehicle.1": "PSLV-C57/Aditya-L1 Mission",
+    "Orbit Type": "Lunar",
+    "Application": "Planetary Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 124,
+    "Launch Date": "Chandrayaan-3",
+    "Launch Vehicle": "14-Jul-23",
+    "Launch Vehicle.1": "LVM3 M4 / Chandrayaan-3 Mission",
+    "Orbit Type": "Lunar",
+    "Application": "Planetary Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 123,
+    "Launch Date": "NVS-01",
+    "Launch Vehicle": "29-May-23",
+    "Launch Vehicle.1": "GSLV-F12/NVS-01 Mission",
+    "Orbit Type": "",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 122,
+    "Launch Date": "EOS-07",
+    "Launch Vehicle": "10-Feb-23",
+    "Launch Vehicle.1": "SSLV-D2/EOS-07 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 121,
+    "Launch Date": "Thybolt",
+    "Launch Vehicle": "26-Nov-22",
+    "Launch Vehicle.1": "PSLV-C54/EOS-06 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 120,
+    "Launch Date": "Thybolt",
+    "Launch Vehicle": "26-Nov-22",
+    "Launch Vehicle.1": "PSLV-C54/EOS-06 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 119,
+    "Launch Date": "Anand",
+    "Launch Vehicle": "26-Nov-22",
+    "Launch Vehicle.1": "PSLV-C54/EOS-06 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 118,
+    "Launch Date": "INS-2B",
+    "Launch Vehicle": "26-Nov-22",
+    "Launch Vehicle.1": "PSLV-C54/EOS-06 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 117,
+    "Launch Date": "EOS-06",
+    "Launch Vehicle": "26-Nov-22",
+    "Launch Vehicle.1": "PSLV-C54/EOS-06 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 116,
+    "Launch Date": "EOS-02",
+    "Launch Vehicle": "07-Aug-22",
+    "Launch Vehicle.1": "SSLV-D1/EOS-02 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 115,
+    "Launch Date": "GSAT-24",
+    "Launch Vehicle": "23-Jun-22",
+    "Launch Vehicle.1": "Ariane-V(VS257)",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 114,
+    "Launch Date": "INS-2TD",
+    "Launch Vehicle": "14-Feb-22",
+    "Launch Vehicle.1": "PSLV-C52/EOS-04 Mission",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 113,
+    "Launch Date": "EOS-04",
+    "Launch Vehicle": "14-Feb-22",
+    "Launch Vehicle.1": "PSLV-C52/EOS-04 Mission",
+    "Orbit Type": "",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 112,
+    "Launch Date": "EOS-03",
+    "Launch Vehicle": "12-Aug-21",
+    "Launch Vehicle.1": "GSLV-F10 / EOS-03 Mission",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 111,
+    "Launch Date": "CMS-01",
+    "Launch Vehicle": "17-Dec-20",
+    "Launch Vehicle.1": "PSLV-C50/CMS-01",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 110,
+    "Launch Date": "EOS-01",
+    "Launch Vehicle": "07-Nov-20",
+    "Launch Vehicle.1": "PSLV-C49/EOS-01",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Disaster Management System, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 109,
+    "Launch Date": "GSAT-30",
+    "Launch Vehicle": "17-Jan-20",
+    "Launch Vehicle.1": "Ariane-5 VA-251",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 108,
+    "Launch Date": "RISAT-2BR1",
+    "Launch Vehicle": "11-Dec-19",
+    "Launch Vehicle.1": "PSLV-C48/RISAT-2BR1",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Disaster Management System, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 107,
+    "Launch Date": "Cartosat-3",
+    "Launch Vehicle": "27-Nov-19",
+    "Launch Vehicle.1": "PSLV-C47 / Cartosat-3 Mission",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 106,
+    "Launch Date": "Chandrayaan2",
+    "Launch Vehicle": "22-Jul-19",
+    "Launch Vehicle.1": "GSLV-Mk III - M1 / Chandrayaan-2 Mission",
+    "Orbit Type": "Lunar",
+    "Application": "Planetary Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 105,
+    "Launch Date": "RISAT-2B",
+    "Launch Vehicle": "22-May-19",
+    "Launch Vehicle.1": "PSLV-C46 Mission",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Disaster Management System, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 104,
+    "Launch Date": "EMISAT",
+    "Launch Vehicle": "01-Apr-19",
+    "Launch Vehicle.1": "PSLV-C45/EMISAT MISSION",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 103,
+    "Launch Date": "GSAT-31",
+    "Launch Vehicle": "06-Feb-19",
+    "Launch Vehicle.1": "Ariane-5 VA-247",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 102,
+    "Launch Date": "Microsat-R",
+    "Launch Vehicle": "24-Jan-19",
+    "Launch Vehicle.1": "PSLV-C44",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 101,
+    "Launch Date": "GSAT-7A",
+    "Launch Vehicle": "19-Dec-18",
+    "Launch Vehicle.1": "GSLV-F11 / GSAT-7A Mission",
+    "Orbit Type": "",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 100,
+    "Launch Date": "GSAT-11 Mission",
+    "Launch Vehicle": "05-Dec-18",
+    "Launch Vehicle.1": "Ariane-5 VA-246",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 99,
+    "Launch Date": "HysIS",
+    "Launch Vehicle": "29-Nov-18",
+    "Launch Vehicle.1": "PSLV-C43 / HysIS Mission",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 98,
+    "Launch Date": "GSAT-29",
+    "Launch Vehicle": "14-Nov-18",
+    "Launch Vehicle.1": "GSLV Mk III-D2 / GSAT-29 Mission",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 97,
+    "Launch Date": "IRNSS-1I",
+    "Launch Vehicle": "12-Apr-18",
+    "Launch Vehicle.1": "PSLV-C41/IRNSS-1I",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 96,
+    "Launch Date": "GSAT-6A",
+    "Launch Vehicle": "29-Mar-18",
+    "Launch Vehicle.1": "GSLV-F08/GSAT-6A Mission",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 95,
+    "Launch Date": "INS-1C",
+    "Launch Vehicle": "12-Jan-18",
+    "Launch Vehicle.1": "PSLV-C40/Cartosat-2 Series Satellite Mission",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 94,
+    "Launch Date": "Microsat",
+    "Launch Vehicle": "12-Jan-18",
+    "Launch Vehicle.1": "PSLV-C40/Cartosat-2 Series Satellite Mission",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 93,
+    "Launch Date": "Cartosat-2 Series Satellite",
+    "Launch Vehicle": "12-Jan-18",
+    "Launch Vehicle.1": "PSLV-C40/Cartosat-2 Series Satellite Mission",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 92,
+    "Launch Date": "IRNSS-1H",
+    "Launch Vehicle": "31-Aug-17",
+    "Launch Vehicle.1": "PSLV-C39/IRNSS-1H Mission",
+    "Orbit Type": "",
+    "Application": "Navigation",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 91,
+    "Launch Date": "GSAT-1 7",
+    "Launch Vehicle": "29-Jun-17",
+    "Launch Vehicle.1": "Ariane-5 VA-238",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 90,
+    "Launch Date": "Cartosat-2 Series Satellite",
+    "Launch Vehicle": "23-Jun-17",
+    "Launch Vehicle.1": "PSLV-C38 / Cartosat-2 Series Satellite",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 89,
+    "Launch Date": "GSAT-19",
+    "Launch Vehicle": "05-Jun-17",
+    "Launch Vehicle.1": "GSLV Mk III-D1/GSAT-19 Mission",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 88,
+    "Launch Date": "GSAT-9",
+    "Launch Vehicle": "05-May-17",
+    "Launch Vehicle.1": "GSLV-F09 / GSAT-9",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 87,
+    "Launch Date": "Cartosat -2 Series Satellite",
+    "Launch Vehicle": "15-Feb-17",
+    "Launch Vehicle.1": "PSLV-C37 / Cartosat -2 Series Satellite",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 86,
+    "Launch Date": "INS-1A",
+    "Launch Vehicle": "15-Feb-17",
+    "Launch Vehicle.1": "PSLV-C37 / Cartosat -2 Series Satellite",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 85,
+    "Launch Date": "INS-1B",
+    "Launch Vehicle": "15-Feb-17",
+    "Launch Vehicle.1": "PSLV-C37 / Cartosat -2 Series Satellite",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 84,
+    "Launch Date": "RESOURCESAT-2A",
+    "Launch Vehicle": "07-Dec-16",
+    "Launch Vehicle.1": "PSLV-C36 / RESOURCESAT-2A",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 83,
+    "Launch Date": "GSAT-18",
+    "Launch Vehicle": "06-Oct-16",
+    "Launch Vehicle.1": "Ariane-5 VA-231",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 82,
+    "Launch Date": "SCATSAT-1",
+    "Launch Vehicle": "26-Sep-16",
+    "Launch Vehicle.1": "PSLV-C35 / SCATSAT-1",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Climate & Environment",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 81,
+    "Launch Date": "INSAT-3DR",
+    "Launch Vehicle": "08-Sep-16",
+    "Launch Vehicle.1": "GSLV-F05 / INSAT-3DR",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Climate & Environment, Disaster Management System",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 80,
+    "Launch Date": "CARTOSAT-2 Series Satellite",
+    "Launch Vehicle": "22-Jun-16",
+    "Launch Vehicle.1": "PSLV-C34 / CARTOSAT-2 Series Satellite",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 79,
+    "Launch Date": "IRNSS-1G",
+    "Launch Vehicle": "28-Apr-16",
+    "Launch Vehicle.1": "PSLV-C33/IRNSS-1G",
+    "Orbit Type": "GEO",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 78,
+    "Launch Date": "IRNSS-1F",
+    "Launch Vehicle": "10-Mar-16",
+    "Launch Vehicle.1": "PSLV-C32/IRNSS-1F",
+    "Orbit Type": "GEO",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 77,
+    "Launch Date": "IRNSS-1E",
+    "Launch Vehicle": "20-Jan-16",
+    "Launch Vehicle.1": "PSLV-C31/IRNSS-1E",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 76,
+    "Launch Date": "GSAT-15",
+    "Launch Vehicle": "11-Nov-15",
+    "Launch Vehicle.1": "Ariane-5 VA-227",
+    "Orbit Type": "GEO",
+    "Application": "Communication, Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 75,
+    "Launch Date": "Astrosat",
+    "Launch Vehicle": "28-Sep-15",
+    "Launch Vehicle.1": "PSLV-C30/AstroSat MISSION",
+    "Orbit Type": "",
+    "Application": "Space Science",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 74,
+    "Launch Date": "GSAT-6",
+    "Launch Vehicle": "27-Aug-15",
+    "Launch Vehicle.1": "GSLV-D6",
+    "Orbit Type": "GTO (Geosynchronous Transfer Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 73,
+    "Launch Date": "IRNSS-1D",
+    "Launch Vehicle": "28-Mar-15",
+    "Launch Vehicle.1": "PSLV-C27/IRNSS-1D",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 72,
+    "Launch Date": "Crew module Atmospheric Re-entry Experiment (CARE)",
+    "Launch Vehicle": "18-Dec-14",
+    "Launch Vehicle.1": "LVM-3/CARE Mission",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 71,
+    "Launch Date": "GSAT-16",
+    "Launch Vehicle": "07-Dec-14",
+    "Launch Vehicle.1": "Ariane-5 VA-221",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 70,
+    "Launch Date": "IRNSS-1C",
+    "Launch Vehicle": "16-Oct-14",
+    "Launch Vehicle.1": "PSLV-C26/IRNSS-1C",
+    "Orbit Type": "GEO",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 69,
+    "Launch Date": "IRNSS-1B",
+    "Launch Vehicle": "04-Apr-14",
+    "Launch Vehicle.1": "PSLV-C24/IRNSS-1B",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 68,
+    "Launch Date": "GSAT-14",
+    "Launch Vehicle": "05-Jan-14",
+    "Launch Vehicle.1": "GSLV-D5/GSAT-14",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 67,
+    "Launch Date": "Mars Orbiter Mission Spacecraft",
+    "Launch Vehicle": "05-Nov-13",
+    "Launch Vehicle.1": "PSLV-C25",
+    "Orbit Type": "Martian",
+    "Application": "Planetary Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 66,
+    "Launch Date": "GSAT-7",
+    "Launch Vehicle": "30-Aug-13",
+    "Launch Vehicle.1": "Ariane-5 VA-215",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 65,
+    "Launch Date": "INSAT-3D",
+    "Launch Vehicle": "26-Jul-13",
+    "Launch Vehicle.1": "Ariane-5 VA-214",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Climate & Environment, Disaster Management System",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 64,
+    "Launch Date": "IRNSS-1A",
+    "Launch Vehicle": "01-Jul-13",
+    "Launch Vehicle.1": "PSLV-C22/IRNSS-1A",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 63,
+    "Launch Date": "SARAL",
+    "Launch Vehicle": "25-Feb-13",
+    "Launch Vehicle.1": "PSLV-C20/SARAL",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Climate & Environment, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 62,
+    "Launch Date": "GSAT-10",
+    "Launch Vehicle": "29-Sep-12",
+    "Launch Vehicle.1": "Ariane-5 VA-209",
+    "Orbit Type": "GEO",
+    "Application": "Communication, Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 61,
+    "Launch Date": "RISAT-1",
+    "Launch Vehicle": "26-Apr-12",
+    "Launch Vehicle.1": "PSLV-C19/RISAT-1",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 60,
+    "Launch Date": "Megha-Tropiques",
+    "Launch Vehicle": "12-Oct-11",
+    "Launch Vehicle.1": "PSLV-C18/Megha-Tropiques",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Climate & Environment, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 59,
+    "Launch Date": "GSAT-12",
+    "Launch Vehicle": "15-Jul-11",
+    "Launch Vehicle.1": "PSLV-C17/GSAT-12",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 58,
+    "Launch Date": "GSAT-8",
+    "Launch Vehicle": "21-May-11",
+    "Launch Vehicle.1": "Ariane-5 VA-202",
+    "Orbit Type": "GEO",
+    "Application": "Communication, Navigation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 57,
+    "Launch Date": "RESOURCESAT-2",
+    "Launch Vehicle": "20-Apr-11",
+    "Launch Vehicle.1": "PSLV-C16/RESOURCESAT-2",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 56,
+    "Launch Date": "YOUTHSAT",
+    "Launch Vehicle": "20-Apr-11",
+    "Launch Vehicle.1": "PSLV-C16/RESOURCESAT-2",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Student Satellite",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 55,
+    "Launch Date": "GSAT-5P",
+    "Launch Vehicle": "25-Dec-10",
+    "Launch Vehicle.1": "GSLV-F06 / GSAT-5P",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 54,
+    "Launch Date": "CARTOSAT-2B",
+    "Launch Vehicle": "12-Jul-10",
+    "Launch Vehicle.1": "PSLV-C15/CARTOSAT-2B",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 53,
+    "Launch Date": "GSAT-4",
+    "Launch Vehicle": "15-Apr-10",
+    "Launch Vehicle.1": "GSLV-D3 / GSAT-4",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 52,
+    "Launch Date": "Oceansat-2",
+    "Launch Vehicle": "23-Sep-09",
+    "Launch Vehicle.1": "PSLV-C14 / OCEANSAT-2",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Climate & Environment, Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 51,
+    "Launch Date": "RISAT-2",
+    "Launch Vehicle": "20-Apr-09",
+    "Launch Vehicle.1": "PSLV-C12 / RISAT-2",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 50,
+    "Launch Date": "Chandrayaan-1",
+    "Launch Vehicle": "22-Oct-08",
+    "Launch Vehicle.1": "PSLV-C11",
+    "Orbit Type": "Lunar",
+    "Application": "Planetary Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 49,
+    "Launch Date": "IMS-1",
+    "Launch Vehicle": "28-Apr-08",
+    "Launch Vehicle.1": "PSLV-C9 / CARTOSAT \u0096 2A",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 48,
+    "Launch Date": "CARTOSAT \u0096 2A",
+    "Launch Vehicle": "28-Apr-08",
+    "Launch Vehicle.1": "PSLV-C9 / CARTOSAT \u0096 2A",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 47,
+    "Launch Date": "INSAT-4CR",
+    "Launch Vehicle": "02-Sep-07",
+    "Launch Vehicle.1": "GSLV-F04 / INSAT-4CR",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 46,
+    "Launch Date": "INSAT-4B",
+    "Launch Vehicle": "12-Mar-07",
+    "Launch Vehicle.1": "Ariane5",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Decommisioned"
+  },
+  {
+    "SL No": 45,
+    "Launch Date": "CARTOSAT-2",
+    "Launch Vehicle": "10-Jan-07",
+    "Launch Vehicle.1": "PSLV-C7 / CARTOSAT-2 / SRE-1",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 44,
+    "Launch Date": "SRE-1",
+    "Launch Vehicle": "10-Jan-07",
+    "Launch Vehicle.1": "PSLV-C7 / CARTOSAT-2 / SRE-1",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 43,
+    "Launch Date": "INSAT-4C",
+    "Launch Vehicle": "10-Jul-06",
+    "Launch Vehicle.1": "GSLV-F02 / INSAT-4C",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 42,
+    "Launch Date": "INSAT-4A",
+    "Launch Vehicle": "22-Dec-05",
+    "Launch Vehicle.1": "Ariane5-V169",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 41,
+    "Launch Date": "CARTOSAT-1",
+    "Launch Vehicle": "05-May-05",
+    "Launch Vehicle.1": "PSLV-C6/CARTOSAT-1/HAMSAT",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 40,
+    "Launch Date": "HAMSAT",
+    "Launch Vehicle": "05-May-05",
+    "Launch Vehicle.1": "PSLV-C6/CARTOSAT-1/HAMSAT",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 39,
+    "Launch Date": "EDUSAT",
+    "Launch Vehicle": "20-Sep-04",
+    "Launch Vehicle.1": "GSLV-F01 / EDUSAT (GSAT-3)",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 38,
+    "Launch Date": "IRS-P6 / RESOURCESAT-1",
+    "Launch Vehicle": "17-Oct-03",
+    "Launch Vehicle.1": "PSLV-C5 /RESOURCESAT-1",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 37,
+    "Launch Date": "INSAT-3E",
+    "Launch Vehicle": "28-Sep-03",
+    "Launch Vehicle.1": "Ariane5-V162",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 36,
+    "Launch Date": "GSAT-2",
+    "Launch Vehicle": "08-May-03",
+    "Launch Vehicle.1": "GSLV-D2 / GSAT-2",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 35,
+    "Launch Date": "INSAT-3A",
+    "Launch Vehicle": "10-Apr-03",
+    "Launch Vehicle.1": "Ariane5-V160",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Climate & Environment, Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 34,
+    "Launch Date": "KALPANA-1",
+    "Launch Vehicle": "12-Sep-02",
+    "Launch Vehicle.1": "PSLV-C4 /KALPANA-1",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Climate & Environment, Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 33,
+    "Launch Date": "INSAT-3C",
+    "Launch Vehicle": "24-Jan-02",
+    "Launch Vehicle.1": "Ariane5-V147",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Climate & Environment, Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 32,
+    "Launch Date": "The Technology Experiment Satellite (TES)",
+    "Launch Vehicle": "22-Oct-01",
+    "Launch Vehicle.1": "PSLV-C3 / TES",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 31,
+    "Launch Date": "GSAT-1",
+    "Launch Vehicle": "18-Apr-01",
+    "Launch Vehicle.1": "GSLV-D1 / GSAT-1",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 30,
+    "Launch Date": "INSAT-3B",
+    "Launch Vehicle": "22-Mar-00",
+    "Launch Vehicle.1": "Ariane-5G",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 29,
+    "Launch Date": "Oceansat(IRS-P4)",
+    "Launch Vehicle": "26-May-99",
+    "Launch Vehicle.1": "PSLV-C2/IRS-P4",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 28,
+    "Launch Date": "INSAT-2E",
+    "Launch Vehicle": "03-Apr-99",
+    "Launch Vehicle.1": "Ariane-42P H10-3",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 27,
+    "Launch Date": "IRS-1D",
+    "Launch Vehicle": "29-Sep-97",
+    "Launch Vehicle.1": "PSLV-C1 / IRS-1D",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 26,
+    "Launch Date": "INSAT-2D",
+    "Launch Vehicle": "04-Jun-97",
+    "Launch Vehicle.1": "Ariane-44L H10-3",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Failed in Orbit"
+  },
+  {
+    "SL No": 25,
+    "Launch Date": "IRS-P3",
+    "Launch Vehicle": "21-Mar-96",
+    "Launch Vehicle.1": "PSLV-D3 / IRS-P3",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 24,
+    "Launch Date": "IRS-1C",
+    "Launch Vehicle": "28-Dec-95",
+    "Launch Vehicle.1": "Molniya",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 23,
+    "Launch Date": "INSAT-2C",
+    "Launch Vehicle": "07-Dec-95",
+    "Launch Vehicle.1": "Ariane-44L H10-3",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 22,
+    "Launch Date": "IRS-P2",
+    "Launch Vehicle": "15-Oct-94",
+    "Launch Vehicle.1": "PSLV-D2",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 21,
+    "Launch Date": "SROSS-C2",
+    "Launch Vehicle": "04-May-94",
+    "Launch Vehicle.1": "ASLV-D4",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 20,
+    "Launch Date": "IRS-1E",
+    "Launch Vehicle": "20-Sep-93",
+    "Launch Vehicle.1": "PSLV-D1",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 19,
+    "Launch Date": "INSAT-2B",
+    "Launch Vehicle": "23-Jul-93",
+    "Launch Vehicle.1": "Ariane-44L H10+",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 18,
+    "Launch Date": "INSAT-2A",
+    "Launch Vehicle": "10-Jul-92",
+    "Launch Vehicle.1": "Ariane-44L H10",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 17,
+    "Launch Date": "SROSS-C",
+    "Launch Vehicle": "20-May-92",
+    "Launch Vehicle.1": "ASLV-D3",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 16,
+    "Launch Date": "IRS-1B",
+    "Launch Vehicle": "29-Aug-91",
+    "Launch Vehicle.1": "Vostok",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 15,
+    "Launch Date": "INSAT-1D",
+    "Launch Vehicle": "12-Jun-90",
+    "Launch Vehicle.1": "Delta 4925",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 14,
+    "Launch Date": "INSAT-1C",
+    "Launch Vehicle": "22-Jul-88",
+    "Launch Vehicle.1": "Ariane-3",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Partial Failure in Orbit"
+  },
+  {
+    "SL No": 13,
+    "Launch Date": "SROSS-2",
+    "Launch Vehicle": "13-Jul-88",
+    "Launch Vehicle.1": "ASLV-D2",
+    "Orbit Type": "",
+    "Application": "Earth Observation, Experimental",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 12,
+    "Launch Date": "IRS-1A",
+    "Launch Vehicle": "17-Mar-88",
+    "Launch Vehicle.1": "Vostok",
+    "Orbit Type": "SSPO (Sun Synchronous Polar Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 11,
+    "Launch Date": "SROSS-1",
+    "Launch Vehicle": "24-Mar-87",
+    "Launch Vehicle.1": "ASLV-D1",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 10,
+    "Launch Date": "INSAT-1B",
+    "Launch Vehicle": "30-Aug-83",
+    "Launch Vehicle.1": "Shuttle [PAM-D]",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 9,
+    "Launch Date": "Rohini Satellite RS-D2",
+    "Launch Vehicle": "17-Apr-83",
+    "Launch Vehicle.1": "SLV-3",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 8,
+    "Launch Date": "INSAT-1A",
+    "Launch Vehicle": "10-Apr-82",
+    "Launch Vehicle.1": "Delta",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication",
+    "Remarks": "Failed in Orbit"
+  },
+  {
+    "SL No": 7,
+    "Launch Date": "Bhaskara-II",
+    "Launch Vehicle": "20-Nov-81",
+    "Launch Vehicle.1": "C-1 Intercosmos",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Earth Observation, Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 6,
+    "Launch Date": "APPLE",
+    "Launch Vehicle": "19-Jun-81",
+    "Launch Vehicle.1": "Ariane -1(V-3)",
+    "Orbit Type": "GSO (Geosynchronous Orbit)",
+    "Application": "Communication, Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 5,
+    "Launch Date": "Rohini Satellite RS-D1",
+    "Launch Vehicle": "31-May-81",
+    "Launch Vehicle.1": "SLV-3D1",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Earth Observation",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 4,
+    "Launch Date": "Rohini Satellite RS-1",
+    "Launch Vehicle": "18-Jul-80",
+    "Launch Vehicle.1": "SLV-3E2",
+    "Orbit Type": "",
+    "Application": "",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 3,
+    "Launch Date": "Rohini Technology Payload (RTP)",
+    "Launch Vehicle": "10-Aug-79",
+    "Launch Vehicle.1": "SLV-3E1",
+    "Orbit Type": "",
+    "Application": "",
+    "Remarks": "Launch unsuccessful"
+  },
+  {
+    "SL No": 2,
+    "Launch Date": "Bhaskara-I",
+    "Launch Vehicle": "07-Jun-79",
+    "Launch Vehicle.1": "C-1Intercosmos",
+    "Orbit Type": "LEO (Low Earth Orbit)",
+    "Application": "Earth Observation, Experimental",
+    "Remarks": "Launch successful"
+  },
+  {
+    "SL No": 1,
+    "Launch Date": "Aryabhata",
+    "Launch Vehicle": "19-Apr-75",
+    "Launch Vehicle.1": "C-1 Intercosmos",
+    "Orbit Type": "",
+    "Application": "Experimental",
+    "Remarks": "Launch successful"
+  }
+]
