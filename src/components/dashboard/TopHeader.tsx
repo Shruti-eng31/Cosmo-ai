@@ -22,7 +22,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const PAGE_TITLES: Record<string, { title: string, subtitle: string }> = {
   "/dashboard": { title: "Cosmology Overview", subtitle: "Explore, analyze and understand astronomical data." },
-  "/dashboard/explorer": { title: "Cosmological Data Explorer", subtitle: "Access and query petabytes of astronomical data." },
   "/dashboard/ai-analysis": { title: "AI Data Scientist", subtitle: "Run advanced deep learning models on datasets." },
   "/dashboard/vision": { title: "Vision AI", subtitle: "Analyze deep space imagery with Vision Transformers." },
   "/dashboard/ask": { title: "Ask COSMO AI", subtitle: "Your personal cosmological research assistant." },

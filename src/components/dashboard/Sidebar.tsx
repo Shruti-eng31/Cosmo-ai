@@ -19,11 +19,9 @@ import {
 
 const NAV_ITEMS = [
   { icon: <LayoutDashboard size={20} />, label: "Overview", href: "/dashboard" },
-  { icon: <Database size={20} />, label: "Data Explorer", href: "/dashboard/explorer" },
   { icon: <BrainCircuit size={20} />, label: "AI Analysis", href: "/dashboard/ai-analysis" },
   { icon: <ScanEye size={20} />, label: "Image Analysis", href: "/dashboard/vision" },
   { icon: <MessageSquare size={20} />, label: "Ask COSMO AI", href: "/dashboard/ask" },
-  { icon: <Box size={20} />, label: "Simulations", href: "/dashboard/simulations" },
   { icon: <Globe2 size={20} />, label: "3D Universe", href: "/dashboard/universe" },
   { icon: <Library size={20} />, label: "Research", href: "/dashboard/research" },
 ];
