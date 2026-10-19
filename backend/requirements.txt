@@ -1,0 +1,36 @@
+# ============================================================
+# Cosmo AI Backend — Python Dependencies
+# ============================================================
+# Install with:  pip install -r requirements.txt
+# ============================================================
+
+# --- Web framework -----------------------------------------------------------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# --- Configuration & environment variables ------------------------------------
+pydantic-settings==2.7.1
+python-dotenv==1.0.1
+
+# --- RAG: Document loading ----------------------------------------------------
+PyPDF2==3.0.1                 # PDF text extraction
+python-multipart==0.0.20      # file uploads (future)
+
+# --- RAG: Embeddings (local, free, no API key needed) -------------------------
+sentence-transformers==3.4.1  # local embedding models via HuggingFace
+
+# --- RAG: Vector database (local, persistent) ---------------------------------
+faiss-cpu==1.15.1             # Facebook AI Similarity Search — fast vector search
+
+# --- RAG: LLM providers (install all; only the configured one is used) --------
+google-genai==1.14.0          # Google Gemini  (free tier available)
+openai==1.82.0                # OpenAI         (paid)
+ollama==0.4.8                 # Ollama         (local, free)
+
+# --- Streaming ----------------------------------------------------------------
+sse-starlette==2.2.1          # Server-Sent Events for streaming responses
+
+# --- Testing ------------------------------------------------------------------
+pytest==8.3.4
+pytest-asyncio==0.25.3
+httpx==0.28.1                 # async test client for FastAPI
