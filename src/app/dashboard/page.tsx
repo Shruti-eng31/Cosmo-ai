@@ -16,13 +16,6 @@ export default function DashboardOverview() {
           href="/dashboard/universe"
         />
         <MetricCard
-          title="Datasets"
-          value="5"
-          icon={<Database />}
-          trend="+2 new sources"
-          href="/dashboard/explorer"
-        />
-        <MetricCard
           title="AI Analyses"
           value="24"
           icon={<FileBarChart />}

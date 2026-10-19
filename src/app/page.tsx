@@ -9,7 +9,6 @@ import AskCosmoSection from "@/components/landing/AskCosmoSection";
 import DataExplorerSection from "@/components/landing/DataExplorerSection";
 import ImageAnalysisSection from "@/components/landing/ImageAnalysisSection";
 import ExploreSection from "@/components/landing/ExploreSection";
-import DashboardSection from "@/components/landing/DashboardSection";
 
 export default function Home() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -27,7 +26,6 @@ export default function Home() {
           <AskCosmoSection />
           <ImageAnalysisSection />
           <ExploreSection />
-          <DashboardSection />
           
           {/* Footer */}
           <footer className="bg-[#010521] border-t border-accent/20 py-12 text-center text-primary/40 font-light text-sm">

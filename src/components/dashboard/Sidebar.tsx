@@ -14,7 +14,8 @@ import {
   Library,
   Settings,
   HelpCircle,
-  LogOut
+  LogOut,
+  Sparkles
 } from "lucide-react";
 
 const NAV_ITEMS = [
@@ -24,6 +25,7 @@ const NAV_ITEMS = [
   { icon: <MessageSquare size={20} />, label: "Ask COSMO AI", href: "/dashboard/ask" },
   { icon: <Globe2 size={20} />, label: "3D Universe", href: "/dashboard/universe" },
   { icon: <Library size={20} />, label: "Research", href: "/dashboard/research" },
+  { icon: <Sparkles size={20} />, label: "Fun Facts", href: "/dashboard/fun-facts" },
 ];
 
 const BOTTOM_NAV_ITEMS = [
