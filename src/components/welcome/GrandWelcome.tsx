@@ -123,7 +123,7 @@ export default function GrandWelcome({ onEnter }: GrandWelcomeProps) {
                 className="group relative px-9 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-full transition-all duration-300 overflow-hidden flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(56,189,248,0.5)] hover:shadow-[0_0_50px_rgba(56,189,248,0.8)] cursor-pointer scale-100 hover:scale-[1.03]"
               >
                 <span className="relative z-10 text-slate-950 tracking-[0.2em] uppercase text-xs sm:text-sm font-bold">
-                  Enter Cosmos
+                  Explore Platform
                 </span>
                 <ChevronRight className="relative z-10 w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform duration-300 stroke-[3]" />
               </button>
