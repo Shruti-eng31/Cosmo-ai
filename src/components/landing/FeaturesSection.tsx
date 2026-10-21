@@ -5,13 +5,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Database, Brain, Telescope, Sparkles, ChevronRight, Activity, Cpu, Layers } from "lucide-react";
 
 export default function FeaturesSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  const y1 = useTransform(scrollYProgress, [0, 1], [60, -60]);
 
   const features = [
     {
@@ -53,7 +46,7 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <section id="explore" ref={containerRef} className="py-28 relative bg-[#010414] border-t border-cyan-500/15 overflow-hidden">
+    <section id="explore" className="py-28 relative bg-[#010414] border-t border-cyan-500/15 overflow-hidden">
       {/* Animated Background Laser Grid Lines */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
         <motion.div
