@@ -179,7 +179,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 pt-4"
             >
               <Link
-                href="/dashboard"
+                href="/login"
                 className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-full transition-all duration-300 overflow-hidden flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:shadow-[0_0_45px_rgba(56,189,248,0.7)] text-sm uppercase tracking-wider scale-100 hover:scale-[1.03]"
               >
                 <span>Start Exploring</span>
