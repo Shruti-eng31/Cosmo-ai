@@ -22,7 +22,6 @@ export default function Home() {
           <Navbar />
           <HeroSection />
           <FeaturesSection />
-          <DataExplorerSection />
           <AskCosmoSection />
           <ImageAnalysisSection />
           <ExploreSection />
