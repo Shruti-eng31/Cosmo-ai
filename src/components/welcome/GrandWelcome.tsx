@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { motion, AnimatePresence } from "framer-motion";
 import CosmicBackground from "./CosmicBackground";
-import { ChevronRight, Compass } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 interface GrandWelcomeProps {
   onEnter: () => void;
@@ -126,14 +126,6 @@ export default function GrandWelcome({ onEnter }: GrandWelcomeProps) {
                   Enter Cosmos
                 </span>
                 <ChevronRight className="relative z-10 w-4 h-4 text-slate-950 group-hover:translate-x-1 transition-transform duration-300 stroke-[3]" />
-              </button>
-
-              <button
-                onClick={handleEnter}
-                className="group flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-[#030a1c]/80 hover:bg-[#030a1c] border border-cyan-400/40 hover:border-cyan-300 text-white transition-all duration-300 text-xs sm:text-sm tracking-[0.16em] uppercase font-medium cursor-pointer backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.6)]"
-              >
-                <Compass className="w-4 h-4 text-cyan-300 group-hover:rotate-45 transition-transform duration-500" />
-                <span>Explore Platform</span>
               </button>
             </motion.div>
           </div>
