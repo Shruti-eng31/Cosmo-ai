@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, MessageSquare, Activity, Database } from "lucide-react";
+import { ArrowRight, Activity, Database } from "lucide-react";
 
 // Optimized Holographic Planetary Core (Smooth 60+ FPS with minimal draw calls)
 function InteractiveCosmicCore() {
@@ -188,9 +188,8 @@ export default function HeroSection() {
 
               <a
                 href="#ask"
-                className="group px-7 py-4 border border-cyan-400/30 hover:border-cyan-300 text-white rounded-full transition-all duration-300 flex items-center justify-center gap-2.5 text-sm uppercase tracking-wider bg-[#030a1c]/70 hover:bg-[#030a1c] backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+                className="group px-7 py-4 border border-cyan-400/30 hover:border-cyan-300 text-white rounded-full transition-all duration-300 flex items-center justify-center text-sm uppercase tracking-wider bg-[#030a1c]/70 hover:bg-[#030a1c] backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
               >
-                <MessageSquare className="w-4 h-4 text-cyan-300 group-hover:scale-110 transition-transform" />
                 <span>Ask COSMO AI</span>
               </a>
             </motion.div>
