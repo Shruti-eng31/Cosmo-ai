@@ -185,13 +185,6 @@ export default function HeroSection() {
                 <span>Start Exploring</span>
                 <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1.5 transition-transform duration-300 stroke-[2.5]" />
               </Link>
-
-              <a
-                href="#ask"
-                className="group px-7 py-4 border border-cyan-400/30 hover:border-cyan-300 text-white rounded-full transition-all duration-300 flex items-center justify-center text-sm uppercase tracking-wider bg-[#030a1c]/70 hover:bg-[#030a1c] backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
-              >
-                <span>Ask COSMO AI</span>
-              </a>
             </motion.div>
           </div>
 
