@@ -1,169 +1,231 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useMemo } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, Text } from "@react-three/drei";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { ArrowRight, Activity, Database } from "lucide-react";
 
-function CosmicCore() {
+// Optimized Holographic Planetary Core (Smooth 60+ FPS with minimal draw calls)
+function InteractiveCosmicCore() {
   const coreRef = useRef<THREE.Mesh>(null);
-  const orbit1Ref = useRef<THREE.Group>(null);
-  const orbit2Ref = useRef<THREE.Group>(null);
-  const orbit3Ref = useRef<THREE.Group>(null);
+  const glowMeshRef = useRef<THREE.Mesh>(null);
+  const ring1Ref = useRef<THREE.Group>(null);
+  const ring2Ref = useRef<THREE.Group>(null);
+  const moonRef = useRef<THREE.Mesh>(null);
+
+  // Generate a minimal, crisp set of quantum stardust particles
+  const [particlesPos, particleColors] = useMemo(() => {
+    const count = 180;
+    const pos = new Float32Array(count * 3);
+    const cols = new Float32Array(count * 3);
+    const cyan = new THREE.Color("#38bdf8");
+    const white = new THREE.Color("#ffffff");
+
+    for (let i = 0; i < count; i++) {
+      const theta = Math.random() * Math.PI * 2;
+      const phi = Math.acos(Math.random() * 2 - 1);
+      const r = 1.35 + Math.random() * 0.35;
+
+      pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+      pos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+      pos[i * 3 + 2] = r * Math.cos(phi);
+
+      const col = Math.random() < 0.7 ? cyan : white;
+      cols[i * 3] = col.r;
+      cols[i * 3 + 1] = col.g;
+      cols[i * 3 + 2] = col.b;
+    }
+    return [pos, cols];
+  }, []);
 
   useFrame((state) => {
     const time = state.clock.elapsedTime;
-    
+
     if (coreRef.current) {
-      coreRef.current.rotation.y = time * 0.5;
-      coreRef.current.rotation.x = time * 0.2;
-    }
-    
-    if (orbit1Ref.current) {
-      orbit1Ref.current.rotation.y = time * 0.2;
-      orbit1Ref.current.rotation.z = Math.sin(time * 0.1) * 0.2;
-    }
-    
-    if (orbit2Ref.current) {
-      orbit2Ref.current.rotation.x = time * 0.15;
-      orbit2Ref.current.rotation.y = time * 0.1;
+      coreRef.current.rotation.y = time * 0.25;
+      coreRef.current.rotation.x = 0.1;
     }
 
-    if (orbit3Ref.current) {
-      orbit3Ref.current.rotation.z = time * 0.1;
-      orbit3Ref.current.rotation.x = Math.cos(time * 0.1) * 0.2;
+    if (glowMeshRef.current) {
+      const pulse = 1 + Math.sin(time * 2.0) * 0.04;
+      glowMeshRef.current.scale.set(pulse, pulse, pulse);
+    }
+
+    if (ring1Ref.current) {
+      ring1Ref.current.rotation.z = time * 0.2;
+    }
+
+    if (ring2Ref.current) {
+      ring2Ref.current.rotation.y = time * -0.15;
+    }
+
+    if (moonRef.current) {
+      const angle = time * 0.5;
+      moonRef.current.position.set(Math.cos(angle) * 3.2, Math.sin(angle * 0.7) * 0.5, Math.sin(angle) * 3.2);
     }
   });
 
   return (
     <group>
-      {/* Central Core */}
-      <Sphere ref={coreRef} args={[1, 32, 32]}>
-        <meshBasicMaterial color="#FFF3CF" wireframe transparent opacity={0.3} />
-      </Sphere>
-      <Sphere args={[0.9, 16, 16]}>
-        <meshBasicMaterial color="#263F78" transparent opacity={0.8} />
-      </Sphere>
+      <ambientLight intensity={0.5} />
+      <pointLight position={[0, 0, 0]} intensity={3.0} distance={12} color="#38bdf8" />
+      <pointLight position={[3, 4, 3]} intensity={1.5} distance={10} color="#ffffff" />
 
-      {/* Orbit 1: Data */}
-      <group ref={orbit1Ref}>
-        <mesh>
-          <torusGeometry args={[2.5, 0.01, 16, 100]} />
-          <meshBasicMaterial color="#263F78" transparent opacity={0.4} />
-        </mesh>
-        <mesh position={[2.5, 0, 0]}>
-          <sphereGeometry args={[0.1, 16, 16]} />
-          <meshBasicMaterial color="#FFF3CF" />
-          <Text position={[0.4, 0.2, 0]} fontSize={0.15} color="#FFF3CF" anchorX="left" anchorY="middle">
-            DATA
-          </Text>
-        </mesh>
-      </group>
+      {/* Central Celestial Body */}
+      <mesh ref={coreRef}>
+        <sphereGeometry args={[1.2, 20, 20]} />
+        <meshStandardMaterial
+          color="#061838"
+          roughness={0.4}
+          metalness={0.6}
+          emissive="#0d2858"
+          emissiveIntensity={0.5}
+        />
+      </mesh>
 
-      {/* Orbit 2: Cosmos / Galaxies */}
-      <group ref={orbit2Ref}>
-        <mesh>
-          <torusGeometry args={[3.8, 0.01, 16, 100]} />
-          <meshBasicMaterial color="#263F78" transparent opacity={0.3} />
-        </mesh>
-        <mesh position={[0, 3.8, 0]}>
-          <sphereGeometry args={[0.15, 16, 16]} />
-          <meshBasicMaterial color="#0D1C42" />
-          <Text position={[0.4, 0.2, 0]} fontSize={0.15} color="#FFF3CF" anchorX="left" anchorY="middle">
-            COSMOS
-          </Text>
-        </mesh>
-      </group>
+      {/* Glowing Pulsing Outer Atmosphere */}
+      <mesh ref={glowMeshRef} scale={1.08}>
+        <sphereGeometry args={[1.2, 16, 16]} />
+        <meshBasicMaterial
+          color="#38bdf8"
+          transparent
+          opacity={0.3}
+          blending={THREE.AdditiveBlending}
+          wireframe
+        />
+      </mesh>
 
-      {/* Orbit 3: AI / Discovery */}
-      <group ref={orbit3Ref}>
-        <mesh>
-          <torusGeometry args={[5, 0.01, 16, 100]} />
-          <meshBasicMaterial color="#263F78" transparent opacity={0.2} />
-        </mesh>
-        <mesh position={[-5, 0, 0]}>
-          <boxGeometry args={[0.2, 0.2, 0.2]} />
-          <meshBasicMaterial color="#FFF3CF" wireframe />
-          <Text position={[-0.4, 0.3, 0]} fontSize={0.15} color="#FFF3CF" anchorX="right" anchorY="middle">
-            AI / DISCOVERY
-          </Text>
-        </mesh>
-      </group>
-
-      {/* Subtle background particles */}
+      {/* Quantum Stardust */}
       <points>
-        <sphereGeometry args={[10, 32, 32]} />
-        <pointsMaterial color="#FFF3CF" size={0.05} transparent opacity={0.3} />
+        <bufferGeometry>
+          <bufferAttribute attach="attributes-position" count={particlesPos.length / 3} args={[particlesPos, 3]} />
+          <bufferAttribute attach="attributes-color" count={particleColors.length / 3} args={[particleColors, 3]} />
+        </bufferGeometry>
+        <pointsMaterial size={0.05} vertexColors transparent opacity={0.7} blending={THREE.AdditiveBlending} />
       </points>
+
+      {/* Ring 1 - Deep Cyan Resonant Track */}
+      <group ref={ring1Ref}>
+        <mesh rotation={[0.5, 0, 0]}>
+          <torusGeometry args={[2.5, 0.015, 8, 48]} />
+          <meshBasicMaterial color="#38bdf8" transparent opacity={0.6} blending={THREE.AdditiveBlending} />
+        </mesh>
+      </group>
+
+      {/* Ring 2 - Outer Track */}
+      <group ref={ring2Ref}>
+        <mesh rotation={[-0.4, 0.3, 0]}>
+          <torusGeometry args={[3.4, 0.015, 8, 48]} />
+          <meshBasicMaterial color="#60a5fa" transparent opacity={0.45} blending={THREE.AdditiveBlending} />
+        </mesh>
+      </group>
+
+      {/* Orbiting Satellite Probe */}
+      <mesh ref={moonRef}>
+        <sphereGeometry args={[0.16, 12, 12]} />
+        <meshBasicMaterial color="#e0f2fe" />
+      </mesh>
     </group>
   );
 }
 
 export default function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <section ref={containerRef} className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden">
+      {/* Static GPU-friendly ambient radial glow (no expensive continuously calculating layout auras) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] bg-cyan-500/10 blur-[100px] rounded-full" />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-blue-600/10 blur-[110px] rounded-full" />
+      </div>
+
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Content */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="space-y-8"
-          >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/50 bg-accent/10 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs tracking-widest text-primary/80 uppercase font-medium">
-                AI × COSMOLOGY × DISCOVERY
-              </span>
-            </div>
+          {/* Left Content (Cols 7) */}
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-light tracking-tight text-white leading-[1.08]">
+                Understand the <br />
+                <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-sky-400 drop-shadow-[0_0_35px_rgba(56,189,248,0.4)]">
+                  Universe
+                </span> <br />
+                with Intelligence.
+              </h1>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-7xl font-light leading-tight text-white/90">
-              Understand the <br />
-              <span className="text-primary font-medium">Universe</span> <br />
-              with Intelligence.
-            </h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-base sm:text-lg text-slate-300/85 max-w-xl font-light leading-relaxed tracking-wide drop-shadow"
+            >
+              COSMO AI transforms complex multi-wavelength astronomical observations into
+              autonomous deep-learning workflows, real-time spectral analysis, and scientific discoveries.
+            </motion.p>
 
-            <p className="text-lg text-primary/60 max-w-xl font-light leading-relaxed">
-              COSMO AI transforms complex astronomical data into interactive analysis, intelligent explanations and scientific discoveries.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <Link href="/dashboard" className="px-8 py-3.5 bg-primary text-background rounded-full font-medium tracking-wide hover:bg-white transition-colors duration-300 flex items-center gap-2 text-sm">
-                Start Exploring
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            {/* Action Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex flex-col sm:flex-row gap-4 pt-4"
+            >
+              <Link
+                href="/login"
+                className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-full transition-all duration-300 overflow-hidden flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(56,189,248,0.4)] hover:shadow-[0_0_45px_rgba(56,189,248,0.7)] text-sm uppercase tracking-wider scale-100 hover:scale-[1.03]"
+              >
+                <span>Start Exploring</span>
+                <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1.5 transition-transform duration-300 stroke-[2.5]" />
               </Link>
-              <button className="px-8 py-3.5 border border-border text-primary rounded-full hover:bg-accent/10 transition-colors duration-300 flex items-center gap-2 text-sm bg-card/30 backdrop-blur-sm">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                Ask COSMO AI
-              </button>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
-          {/* Right Visual - Cosmic Core */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.5, delay: 0.8 }}
-            className="h-[600px] w-full relative"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent z-10 pointer-events-none" />
-            <Canvas camera={{ position: [0, 2, 8], fov: 45 }}>
-              <ambientLight intensity={0.5} />
-              <CosmicCore />
-              <OrbitControls 
-                enableZoom={false} 
-                enablePan={false}
-                autoRotate
-                autoRotateSpeed={0.5}
-                maxPolarAngle={Math.PI / 2 + 0.2}
-                minPolarAngle={Math.PI / 2 - 0.2}
-              />
-            </Canvas>
-          </motion.div>
+          {/* Right Visual (Cols 5) - High-Performance 3D Core */}
+          <div className="lg:col-span-5 relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="h-[460px] sm:h-[520px] w-full relative"
+            >
+              <Canvas
+                camera={{ position: [0, 2, 7.5], fov: 45 }}
+                dpr={[1, 1.25]}
+                gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+              >
+                <InteractiveCosmicCore />
+              </Canvas>
+
+              {/* Lightweight Floating Badges with CSS animations instead of continuous framer JS loops */}
+              <div className="absolute top-6 left-2 sm:left-6 z-20 p-3 rounded-xl bg-[#03091e]/85 border border-cyan-400/30 backdrop-blur-md shadow-lg flex items-center gap-3 text-xs animate-pulse">
+                <div className="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300">
+                  <Activity className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-mono">Neural Vision</div>
+                  <div className="font-semibold text-white">Galaxy Cluster M87</div>
+                </div>
+              </div>
+
+              <div className="absolute bottom-10 right-2 sm:right-6 z-20 p-3 rounded-xl bg-[#03091e]/85 border border-blue-400/30 backdrop-blur-md shadow-lg flex items-center gap-3 text-xs">
+                <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-400/40 flex items-center justify-center text-blue-300">
+                  <Database className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-[10px] text-slate-400 uppercase tracking-widest font-mono">Spectral Stream</div>
+                  <div className="font-semibold text-cyan-200">Redshift z = 2.418</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
 
         </div>
       </div>

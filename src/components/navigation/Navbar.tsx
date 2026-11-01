@@ -60,9 +60,12 @@ export default function Navbar() {
 
           {/* CTA Desktop */}
           <div className="hidden md:block">
-            <button className="px-5 py-2 border border-accent text-primary text-sm uppercase tracking-wider hover:bg-accent/20 transition-all duration-300 rounded-sm">
+            <Link
+              href="/login"
+              className="px-5 py-2 border border-accent text-primary text-sm uppercase tracking-wider hover:bg-accent/20 transition-all duration-300 rounded-sm inline-block"
+            >
               Launch COSMO AI
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
