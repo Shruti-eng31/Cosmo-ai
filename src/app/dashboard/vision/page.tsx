@@ -185,22 +185,22 @@ export default function VisionAnalysisPage() {
     <div className="max-w-[1600px] mx-auto pb-12 h-full flex flex-col xl:flex-row gap-6">
       
       {/* Left Imaging Workspace */}
-      <div className="flex-1 bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl overflow-hidden flex flex-col shadow-2xl backdrop-blur-xl">
+      <div className="flex-1 bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl overflow-hidden flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
         
         {/* Workspace Toolbar */}
-        <div className="p-4 border-b border-[#263F78]/30 bg-background/30 flex flex-wrap justify-between items-center gap-3">
+        <div className="p-4 border-b border-white/[0.07] bg-white/[0.01] flex flex-wrap justify-between items-center gap-3">
           <div className="flex items-center gap-2 overflow-x-auto py-1">
-            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold mr-1">
+            <span className="text-[10px] uppercase tracking-wider text-[#FFF3CF]/50 font-semibold mr-1 font-mono">
               Surveys:
             </span>
             {CELESTIAL_SAMPLES.map((sample) => (
               <button
                 key={sample.id}
                 onClick={() => handleSelectSample(sample)}
-                className={`px-3 py-1.5 rounded-lg text-xs font-medium border transition-all whitespace-nowrap flex items-center gap-1.5 ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-medium border transition-all whitespace-nowrap flex items-center gap-1.5 font-mono ${
                   selectedTarget.id === sample.id
-                    ? "bg-sky-500/20 border-sky-400 text-sky-300 shadow-[0_0_12px_rgba(56,189,248,0.25)]"
-                    : "bg-[#071333] border-[#263F78]/50 text-slate-400 hover:text-white hover:border-[#263F78]"
+                    ? "bg-[#FFF3CF] border-[#FFF3CF] text-slate-950 font-bold shadow-[0_0_12px_rgba(255,243,207,0.25)]"
+                    : "bg-black/35 border-white/[0.08] text-white/60 hover:text-white hover:bg-white/[0.05]"
                 }`}
               >
                 <Eye className="w-3 h-3" /> {sample.name.split(" ")[0]}
@@ -211,10 +211,10 @@ export default function VisionAnalysisPage() {
           <div className="flex items-center gap-2">
             <button 
               onClick={() => setShowGrid(!showGrid)}
-              className={`px-2.5 py-1.5 rounded-lg text-xs border transition-colors ${
+              className={`px-2.5 py-1.5 rounded-xl text-xs border transition-colors ${
                 showGrid 
-                  ? "bg-sky-500/10 border-sky-400/40 text-sky-300" 
-                  : "bg-transparent border-[#263F78]/40 text-slate-400"
+                  ? "bg-white/[0.1] border-white/[0.2] text-[#FFF3CF]" 
+                  : "bg-transparent border-white/[0.08] text-white/40 hover:text-white"
               }`}
               title="Toggle Astrometric Grid"
             >
@@ -223,7 +223,7 @@ export default function VisionAnalysisPage() {
             <button 
               onClick={handleReanalyze}
               disabled={analyzing}
-              className="px-3 py-1.5 bg-gradient-to-r from-sky-400 to-blue-600 text-slate-950 font-semibold rounded-lg text-xs tracking-wider uppercase flex items-center gap-1.5 hover:opacity-90 transition-all disabled:opacity-50"
+              className="px-3.5 py-1.5 bg-[#FFF3CF] text-slate-950 font-bold rounded-xl text-xs tracking-wider uppercase flex items-center gap-1.5 hover:bg-white transition-all disabled:opacity-50 font-mono shadow-md"
             >
               <Scan className="w-3.5 h-3.5" /> Scan Target
             </button>
@@ -324,13 +324,13 @@ export default function VisionAnalysisPage() {
       <div className="w-full xl:w-[420px] flex flex-col gap-5 shrink-0">
         
         {/* Detection Card */}
-        <div className="bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl p-5 shadow-2xl backdrop-blur-xl">
-          <div className="flex items-center gap-3 border-b border-[#263F78]/30 pb-4 mb-4">
-            <div className="w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-400/30 flex items-center justify-center shrink-0">
-              <Scan className="w-5 h-5 text-sky-400" />
+        <div className="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl p-5 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
+          <div className="flex items-center gap-3 border-b border-white/[0.07] pb-4 mb-4">
+            <div className="w-11 h-11 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center shrink-0">
+              <Scan className="w-5 h-5 text-[#FFF3CF]" />
             </div>
             <div>
-              <span className="text-[10px] uppercase tracking-widest text-slate-400 font-semibold block">
+              <span className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/50 font-semibold block font-mono">
                 Vision Transformer Output
               </span>
               <h3 className="text-base font-semibold text-white leading-tight">
@@ -339,46 +339,46 @@ export default function VisionAnalysisPage() {
             </div>
           </div>
 
-          <div className="space-y-2.5 text-xs">
-            <div className="flex justify-between items-center py-1.5 border-b border-[#263F78]/20">
-              <span className="text-slate-400">Classification</span>
-              <span className="text-sky-300 font-medium px-2 py-0.5 rounded bg-sky-500/10 border border-sky-500/20 text-right">
+          <div className="space-y-2.5 text-xs font-light">
+            <div className="flex justify-between items-center py-1.5 border-b border-white/[0.05]">
+              <span className="text-white/60">Classification</span>
+              <span className="text-[#FFF3CF] font-medium px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/[0.1] text-right text-[11px] font-mono">
                 {selectedTarget.classification}
               </span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#263F78]/20">
-              <span className="text-slate-400">Confidence Score</span>
+            <div className="flex justify-between items-center py-1.5 border-b border-white/[0.05]">
+              <span className="text-white/60">Confidence Score</span>
               <span className="text-emerald-400 font-mono font-bold">{selectedTarget.confidence}</span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#263F78]/20">
-              <span className="text-slate-400">Cosmological Redshift</span>
+            <div className="flex justify-between items-center py-1.5 border-b border-white/[0.05]">
+              <span className="text-white/60">Cosmological Redshift</span>
               <span className="text-white font-mono">{selectedTarget.redshift}</span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#263F78]/20">
-              <span className="text-slate-400">Light Travel Distance</span>
-              <span className="text-slate-200">{selectedTarget.distance}</span>
+            <div className="flex justify-between items-center py-1.5 border-b border-white/[0.05]">
+              <span className="text-white/60">Light Travel Distance</span>
+              <span className="text-white/80">{selectedTarget.distance}</span>
             </div>
 
-            <div className="flex justify-between items-center py-1.5 border-b border-[#263F78]/20">
-              <span className="text-slate-400">Morphological Profile</span>
-              <span className="text-slate-200">{selectedTarget.sersicIndex}</span>
+            <div className="flex justify-between items-center py-1.5 border-b border-white/[0.05]">
+              <span className="text-white/60">Morphological Profile</span>
+              <span className="text-white/80">{selectedTarget.sersicIndex}</span>
             </div>
 
             <div className="flex justify-between items-center py-1.5">
-              <span className="text-slate-400">Estimated Stellar Mass</span>
-              <span className="text-amber-400 font-mono">{selectedTarget.stellarMass}</span>
+              <span className="text-white/60">Estimated Stellar Mass</span>
+              <span className="text-amber-300 font-mono">{selectedTarget.stellarMass}</span>
             </div>
           </div>
         </div>
 
         {/* Feature Sub-Regions Inspector */}
-        <div className="bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl p-5 shadow-2xl backdrop-blur-xl">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3 flex items-center justify-between">
+        <div className="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl p-5 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3 flex items-center justify-between font-mono">
             <span>Segmented Coordinates</span>
-            <span className="text-[10px] text-sky-400 font-mono">{selectedTarget.detectedFeatures.length} ROIs</span>
+            <span className="text-[10px] text-[#FFF3CF] font-mono px-2 py-0.5 rounded bg-white/[0.06] border border-white/[0.1]">{selectedTarget.detectedFeatures.length} ROIs</span>
           </h4>
 
           <div className="space-y-2">
@@ -390,20 +390,20 @@ export default function VisionAnalysisPage() {
                   onClick={() => setActiveFeatureIndex(i)}
                   className={`p-2.5 rounded-xl border text-xs cursor-pointer transition-all ${
                     active
-                      ? "bg-sky-500/15 border-sky-400 text-white shadow-[0_0_12px_rgba(56,189,248,0.2)]"
-                      : "bg-[#071333]/50 border-[#263F78]/30 text-slate-400 hover:text-white hover:border-[#263F78]"
+                      ? "bg-white/[0.1] border-white/[0.2] text-white shadow-sm"
+                      : "bg-black/35 border-white/[0.08] text-white/60 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
                   <div className="flex items-center justify-between font-medium">
                     <span className="flex items-center gap-1.5">
-                      <span className={`w-2 h-2 rounded-full ${active ? "bg-sky-400" : "bg-slate-500"}`} />
+                      <span className={`w-2 h-2 rounded-full ${active ? "bg-[#FFF3CF]" : "bg-white/40"}`} />
                       {feat.label}
                     </span>
-                    <span className="font-mono text-[10px] text-sky-400">{feat.confidence}</span>
+                    <span className="font-mono text-[10px] text-[#FFF3CF]">{feat.confidence}</span>
                   </div>
-                  <div className="text-[10px] text-slate-400 mt-1 flex justify-between">
+                  <div className="text-[10px] text-white/45 mt-1 flex justify-between font-mono">
                     <span>Feature: {feat.type}</span>
-                    <span className="font-mono">T:{feat.top} L:{feat.left}</span>
+                    <span>T:{feat.top} L:{feat.left}</span>
                   </div>
                 </div>
               );
@@ -412,24 +412,24 @@ export default function VisionAnalysisPage() {
         </div>
 
         {/* Photometric & Spectral Readout */}
-        <div className="bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl p-5 shadow-2xl backdrop-blur-xl">
-          <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3 flex items-center justify-between">
+        <div className="bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl p-5 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3 flex items-center justify-between font-mono">
             <span>Photometric Band Flux</span>
-            <Activity className="w-3.5 h-3.5 text-sky-400" />
+            <Activity className="w-3.5 h-3.5 text-[#FFF3CF]" />
           </h4>
 
           <div className="grid grid-cols-2 gap-2 mb-4">
             {selectedTarget.spectralBands.map((band) => (
-              <div key={band.band} className="p-2 rounded-lg bg-[#071333]/60 border border-[#263F78]/30 text-xs">
-                <div className="text-[10px] text-slate-400 uppercase font-mono">{band.band}</div>
+              <div key={band.band} className="p-2.5 rounded-xl bg-black/35 border border-white/[0.08] text-xs">
+                <div className="text-[10px] text-white/45 uppercase font-mono">{band.band}</div>
                 <div className="font-mono text-white text-sm mt-0.5">{band.flux}</div>
-                <div className="text-[9px] text-emerald-400">SNR: {band.snr}</div>
+                <div className="text-[9px] text-emerald-400 font-mono">SNR: {band.snr}</div>
               </div>
             ))}
           </div>
 
-          <div className="p-3 rounded-xl bg-sky-500/5 border border-sky-400/20 text-xs text-slate-300 leading-relaxed font-light">
-            <span className="font-semibold text-sky-300 block mb-1">Astro-Inference:</span>
+          <div className="p-3.5 rounded-xl bg-white/[0.03] border border-white/[0.08] text-xs text-white/80 leading-relaxed font-light">
+            <span className="font-semibold text-[#FFF3CF] block mb-1 font-mono text-[11px] uppercase tracking-wider">Astro-Inference:</span>
             {selectedTarget.aiNotes}
           </div>
         </div>

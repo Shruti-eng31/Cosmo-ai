@@ -210,15 +210,15 @@ export default function AIAnalysisPage() {
     <div className="max-w-[1600px] mx-auto pb-12 h-full flex flex-col xl:flex-row gap-6 items-stretch">
       
       {/* Left Configuration Panel */}
-      <div className="w-full xl:w-96 bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl flex flex-col overflow-hidden shrink-0 shadow-2xl backdrop-blur-xl">
-        <div className="p-5 border-b border-[#263F78]/30 bg-background/30 flex items-center justify-between">
+      <div className="w-full xl:w-96 bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl flex flex-col overflow-hidden shrink-0 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
+        <div className="p-5 border-b border-white/[0.07] bg-white/[0.01] flex items-center justify-between">
           <div>
             <h3 className="text-sm font-semibold text-white tracking-wide flex items-center gap-2">
-              <BrainCircuit className="w-4 h-4 text-sky-400" /> AI Telemetry Engine
+              <BrainCircuit className="w-4 h-4 text-[#FFF3CF]" /> AI Telemetry Engine
             </h3>
-            <p className="text-[10px] uppercase tracking-widest text-sky-300/50 mt-0.5">Real Mission Analytics</p>
+            <p className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/50 mt-0.5 font-mono">Real Mission Analytics</p>
           </div>
-          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30">
+          <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-white/[0.06] text-[#FFF3CF] border border-white/[0.1]">
             {missions.length} Records
           </span>
         </div>
@@ -226,30 +226,30 @@ export default function AIAnalysisPage() {
         <div className="p-5 space-y-6 flex-1 overflow-y-auto">
           {/* Dataset Switcher */}
           <div className="space-y-2">
-            <label className="text-[10px] uppercase tracking-widest text-sky-300/70 font-semibold flex items-center justify-between">
+            <label className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/70 font-semibold flex items-center justify-between font-mono">
               <span>Ground Truth Dataset</span>
-              <span className="text-sky-400 font-mono text-[9px]">Verified</span>
+              <span className="text-[#FFF3CF] font-mono text-[9px]">Verified</span>
             </label>
             <div className="relative">
-              <Database className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-sky-400" />
+              <Database className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#FFF3CF]" />
               <select 
                 value={selectedDataset}
                 onChange={(e) => setSelectedDataset(e.target.value as any)}
-                className="w-full bg-[#071333] border border-[#263F78]/60 rounded-xl py-2.5 pl-10 pr-4 text-xs text-white appearance-none outline-none focus:border-sky-400 transition-colors cursor-pointer"
+                className="w-full bg-black/45 border border-white/[0.1] rounded-xl py-2.5 pl-10 pr-4 text-xs text-white appearance-none outline-none focus:border-[#FFF3CF]/60 backdrop-blur-md transition-colors cursor-pointer"
               >
                 <option value="isro">ISRO Historical Flight Telemetry (1975-2023)</option>
                 <option value="desi">DESI DR1 - Baryon Acoustic Oscillation Spectra</option>
                 <option value="gaia">GAIA DR3 - Stellar Kinematics & Parallax</option>
               </select>
             </div>
-            <p className="text-[10px] text-slate-400 leading-relaxed">
+            <p className="text-[10px] text-white/50 leading-relaxed font-light">
               Synthesized from Indian Space Research Organisation flight logs including SLV, ASLV, PSLV, GSLV, and LVM3 launch records.
             </p>
           </div>
 
           {/* Analysis Mode */}
           <div className="space-y-2">
-            <label className="text-[10px] uppercase tracking-widest text-sky-300/70 font-semibold">
+            <label className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/70 font-semibold font-mono">
               Analysis Paradigm
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -257,10 +257,10 @@ export default function AIAnalysisPage() {
                 <button
                   key={mode}
                   onClick={() => setAnalysisMode(mode)}
-                  className={`py-2 px-3 text-xs rounded-lg border text-left transition-all ${
+                  className={`py-2 px-3 text-xs rounded-xl border text-left transition-all ${
                     analysisMode === mode
-                      ? "bg-sky-500/20 border-sky-400 text-sky-300 font-medium shadow-[0_0_15px_rgba(56,189,248,0.2)]"
-                      : "bg-[#071333]/60 border-[#263F78]/40 text-slate-400 hover:text-white hover:border-[#263F78]"
+                      ? "bg-[#FFF3CF] border-[#FFF3CF] text-slate-950 font-bold shadow-[0_0_15px_rgba(255,243,207,0.25)]"
+                      : "bg-black/35 border-white/[0.08] text-white/60 hover:text-white hover:bg-white/[0.05]"
                   }`}
                 >
                   {mode}
@@ -271,19 +271,19 @@ export default function AIAnalysisPage() {
 
           {/* Vehicle Family Filter */}
           <div className="space-y-2">
-            <label className="text-[10px] uppercase tracking-widest text-sky-300/70 font-semibold flex items-center justify-between">
+            <label className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/70 font-semibold flex items-center justify-between font-mono">
               <span>Filter Launch Vehicle</span>
-              <span className="text-slate-400 text-[10px]">{filteredMissions.length} filtered</span>
+              <span className="text-white/40 text-[10px]">{filteredMissions.length} filtered</span>
             </label>
             <div className="flex flex-wrap gap-1.5">
               {vehicleFamilies.map((fam) => (
                 <button
                   key={fam}
                   onClick={() => setVehicleFilter(fam)}
-                  className={`px-2.5 py-1 rounded text-[11px] border transition-all ${
+                  className={`px-2.5 py-1 rounded-lg text-[11px] border transition-all ${
                     vehicleFilter === fam
-                      ? "bg-sky-400 text-slate-950 font-bold border-sky-400"
-                      : "bg-[#071333] border-[#263F78]/50 text-slate-300 hover:border-sky-400/50"
+                      ? "bg-[#FFF3CF] text-slate-950 font-bold border-[#FFF3CF]"
+                      : "bg-black/35 border-white/[0.08] text-white/70 hover:border-[#FFF3CF]/40"
                   }`}
                 >
                   {fam}
@@ -293,10 +293,10 @@ export default function AIAnalysisPage() {
           </div>
 
           {/* AI Hyperparameters */}
-          <div className="space-y-4 pt-2 border-t border-[#263F78]/30">
-            <label className="text-[10px] uppercase tracking-widest text-sky-300/70 font-semibold flex items-center justify-between">
+          <div className="space-y-4 pt-2 border-t border-white/[0.08]">
+            <label className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/70 font-semibold flex items-center justify-between font-mono">
               <span>Classifier Settings</span>
-              <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+              <Sparkles className="w-3.5 h-3.5 text-[#FFF3CF]" />
             </label>
 
             <div className="space-y-1.5">
@@ -332,11 +332,11 @@ export default function AIAnalysisPage() {
         </div>
 
         {/* Action Button */}
-        <div className="p-5 border-t border-[#263F78]/30 bg-background/30">
+        <div className="p-5 border-t border-white/[0.08] bg-white/[0.01]">
           <button
             onClick={handleRunAnalysis}
             disabled={isAnalyzing}
-            className="w-full py-3 bg-gradient-to-r from-sky-400 to-blue-600 text-slate-950 font-semibold rounded-xl text-xs tracking-wider uppercase hover:opacity-95 transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(56,189,248,0.35)] disabled:opacity-50"
+            className="w-full py-3 bg-[#FFF3CF] text-slate-950 font-bold rounded-xl text-xs tracking-wider uppercase hover:bg-white transition-all flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(255,243,207,0.3)] disabled:opacity-50 font-mono"
           >
             {isAnalyzing ? (
               <><RefreshCcw className="w-4 h-4 animate-spin text-slate-950" /> Running AI Inference...</>
@@ -348,7 +348,7 @@ export default function AIAnalysisPage() {
       </div>
 
       {/* Right Results Panel */}
-      <div className="flex-1 bg-[#03091e]/80 border border-[#263F78]/40 rounded-2xl overflow-hidden relative flex flex-col shadow-2xl backdrop-blur-xl">
+      <div className="flex-1 bg-white/[0.03] backdrop-blur-2xl border border-white/[0.09] rounded-2xl overflow-hidden relative flex flex-col shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
         
         {/* Loading Overlay */}
         <AnimatePresence>
@@ -357,23 +357,23 @@ export default function AIAnalysisPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-[#010414]/95 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center"
+              className="absolute inset-0 bg-[#02040a]/95 backdrop-blur-md z-30 flex flex-col items-center justify-center p-6 text-center"
             >
               <div className="w-24 h-24 relative flex items-center justify-center mb-6">
                 <motion.div 
                   animate={{ rotate: 360 }} 
                   transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }} 
-                  className="absolute inset-0 rounded-full border-2 border-sky-400/20 border-t-sky-400" 
+                  className="absolute inset-0 rounded-full border-2 border-white/20 border-t-[#FFF3CF]" 
                 />
                 <motion.div 
                   animate={{ rotate: -360 }} 
                   transition={{ repeat: Infinity, duration: 1.8, ease: "linear" }} 
                   className="absolute inset-2 rounded-full border-2 border-indigo-500/20 border-b-indigo-400" 
                 />
-                <Rocket className="w-8 h-8 text-sky-400 animate-pulse" />
+                <Rocket className="w-8 h-8 text-[#FFF3CF] animate-pulse" />
               </div>
               <h3 className="text-xl font-medium text-white mb-2">Analyzing Mission Records...</h3>
-              <p className="text-xs text-sky-300/60 font-mono max-w-md">
+              <p className="text-xs text-[#FFF3CF]/60 font-mono max-w-md">
                 Computing Bayesian success likelihood, classifying propulsion telemetry, and auditing orbit injection anomalies across 125 missions.
               </p>
             </motion.div>
@@ -381,17 +381,17 @@ export default function AIAnalysisPage() {
         </AnimatePresence>
 
         {/* Content Header */}
-        <div className="p-6 border-b border-[#263F78]/30 bg-background/20 flex flex-wrap items-center justify-between gap-4">
+        <div className="p-6 border-b border-white/[0.07] bg-white/[0.01] flex flex-wrap items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1.5">
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 text-[10px] uppercase tracking-wider font-semibold flex items-center gap-1.5 font-mono">
                 <CheckCircle2 className="w-3 h-3" /> Model Active
               </span>
-              <span className="text-[10px] uppercase tracking-widest text-slate-400">
-                Vehicle Family: <span className="text-sky-300 font-mono font-medium">{vehicleFilter}</span>
+              <span className="text-[10px] uppercase tracking-widest text-white/40 font-mono">
+                Vehicle Family: <span className="text-[#FFF3CF] font-mono font-medium">{vehicleFilter}</span>
               </span>
             </div>
-            <h2 className="text-2xl font-light text-white tracking-wide">
+            <h2 className="text-xl md:text-2xl font-light text-white tracking-wide">
               {analysisMode === "Success Rate" && "Temporal Mission Trajectory & Success Timeline"}
               {analysisMode === "Vehicle Reliability" && "Launch Vehicle Fleet Reliability Analysis"}
               {analysisMode === "Orbit Spectrum" && "Orbital Destination & Payload Dispersion"}
@@ -400,7 +400,7 @@ export default function AIAnalysisPage() {
           </div>
           <button 
             onClick={handleRunAnalysis}
-            className="p-2 border border-[#263F78]/50 rounded-lg hover:bg-sky-500/10 text-sky-400 hover:border-sky-400 transition-colors"
+            className="p-2 border border-white/[0.1] rounded-xl hover:bg-white/[0.08] text-[#FFF3CF] hover:border-white/20 transition-colors backdrop-blur-md"
             title="Re-run analysis"
           >
             <RefreshCcw className="w-4 h-4" />
@@ -408,41 +408,41 @@ export default function AIAnalysisPage() {
         </div>
 
         {/* Top Metric Cards */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 border-b border-[#263F78]/30 bg-[#071333]/30">
-          <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-slate-400 flex items-center justify-between">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 border-b border-white/[0.07] bg-black/20">
+          <div className="bg-black/35 border border-white/[0.08] rounded-xl p-4 backdrop-blur-md">
+            <div className="text-[10px] uppercase tracking-widest text-white/45 flex items-center justify-between font-mono">
               <span>Catalogued Flights</span>
-              <Rocket className="w-3.5 h-3.5 text-sky-400" />
+              <Rocket className="w-3.5 h-3.5 text-[#FFF3CF]" />
             </div>
             <div className="text-2xl font-bold text-white mt-1 font-mono">{totalMissions}</div>
-            <div className="text-[10px] text-slate-400 mt-0.5">Missions processed</div>
+            <div className="text-[10px] text-white/40 mt-0.5 font-mono">Missions processed</div>
           </div>
 
-          <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-slate-400 flex items-center justify-between">
+          <div className="bg-black/35 border border-white/[0.08] rounded-xl p-4 backdrop-blur-md">
+            <div className="text-[10px] uppercase tracking-widest text-white/45 flex items-center justify-between font-mono">
               <span>Success Ratio</span>
               <TrendingUp className="w-3.5 h-3.5 text-emerald-400" />
             </div>
             <div className="text-2xl font-bold text-emerald-400 mt-1 font-mono">{successRate}%</div>
-            <div className="text-[10px] text-slate-400 mt-0.5">{successfulMissions} of {totalMissions} missions</div>
+            <div className="text-[10px] text-white/40 mt-0.5 font-mono">{successfulMissions} of {totalMissions} missions</div>
           </div>
 
-          <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-slate-400 flex items-center justify-between">
+          <div className="bg-black/35 border border-white/[0.08] rounded-xl p-4 backdrop-blur-md">
+            <div className="text-[10px] uppercase tracking-widest text-white/45 flex items-center justify-between font-mono">
               <span>Recorded Anomalies</span>
               <AlertTriangle className="w-3.5 h-3.5 text-rose-400" />
             </div>
             <div className="text-2xl font-bold text-rose-400 mt-1 font-mono">{anomalousMissions}</div>
-            <div className="text-[10px] text-slate-400 mt-0.5">Launch & orbit failures</div>
+            <div className="text-[10px] text-white/40 mt-0.5 font-mono">Launch & orbit failures</div>
           </div>
 
-          <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-4">
-            <div className="text-[10px] uppercase tracking-widest text-slate-400 flex items-center justify-between">
+          <div className="bg-black/35 border border-white/[0.08] rounded-xl p-4 backdrop-blur-md">
+            <div className="text-[10px] uppercase tracking-widest text-white/45 flex items-center justify-between font-mono">
               <span>AI Confidence</span>
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
             </div>
-            <div className="text-2xl font-bold text-sky-300 mt-1 font-mono">98.4%</div>
-            <div className="text-[10px] text-slate-400 mt-0.5">R² correlation fit</div>
+            <div className="text-2xl font-bold text-[#FFF3CF] mt-1 font-mono">98.4%</div>
+            <div className="text-[10px] text-white/40 mt-0.5 font-mono">R² correlation fit</div>
           </div>
         </div>
 
@@ -450,11 +450,11 @@ export default function AIAnalysisPage() {
         <div className="p-6 space-y-6 flex-1 overflow-y-auto">
 
           {/* AI Synthesis Callout */}
-          <div className="bg-[#071333]/70 border border-sky-400/20 rounded-xl p-5 relative">
-            <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#071333] px-2 text-[10px] uppercase tracking-widest text-sky-400 flex items-center gap-1 font-semibold border border-sky-400/30 rounded">
-              <BrainCircuit className="w-3 h-3" /> Real Analytical Summary
+          <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 relative backdrop-blur-md">
+            <div className="absolute top-0 left-6 -translate-y-1/2 bg-[#050A18] px-2.5 py-0.5 text-[10px] uppercase tracking-widest text-[#FFF3CF] flex items-center gap-1 font-semibold border border-[#FFF3CF]/30 rounded-full font-mono">
+              <BrainCircuit className="w-3 h-3 text-[#FFF3CF]" /> Real Analytical Summary
             </div>
-            <p className="text-xs text-slate-200 leading-relaxed font-light">
+            <p className="text-xs text-white/80 leading-relaxed font-light">
               {analysisMode === "Success Rate" && (
                 <>
                   Statistical evaluation of <strong>{totalMissions} launches</strong> shows a dramatic reliability increase from <strong>63.6% in the 1980s</strong> (SLV-3 & early ASLV development) to <strong>94.6% in the 2010s</strong> and <strong>94.1% in the 2020s</strong>. The PSLV fleet achieved an extraordinary <strong>96.7% operational success rate</strong> (59 successful out of 61 missions), establishing itself as one of the world's most consistent orbital workhorses.
@@ -480,13 +480,13 @@ export default function AIAnalysisPage() {
 
           {/* Mode-Specific Chart / Data */}
           {analysisMode === "Success Rate" && (
-            <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5">
+            <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 backdrop-blur-md">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-white">Historical Launch Volume & Success Rate by Decade</h4>
-                  <p className="text-[10px] text-slate-400">Total flights vs successfully injected orbits</p>
+                  <p className="text-[10px] text-white/40 font-mono">Total flights vs successfully injected orbits</p>
                 </div>
-                <div className="flex items-center gap-3 text-xs">
+                <div className="flex items-center gap-3 text-xs font-mono">
                   <span className="flex items-center gap-1.5 text-sky-400">
                     <span className="w-2.5 h-2.5 rounded-sm bg-sky-400" /> Total Missions
                   </span>
@@ -499,11 +499,11 @@ export default function AIAnalysisPage() {
               <div className="h-[320px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={decadeTrends} margin={{ top: 20, right: 20, left: -20, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#263F78" opacity={0.3} vertical={false} />
-                    <XAxis dataKey="decade" stroke="#263F78" tick={{ fill: "#94a3b8", fontSize: 11 }} tickLine={false} />
-                    <YAxis stroke="#263F78" tick={{ fill: "#94a3b8", fontSize: 11 }} tickLine={false} axisLine={false} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" vertical={false} />
+                    <XAxis dataKey="decade" stroke="rgba(255,255,255,0.15)" tick={{ fill: "#FFF3CF", fontSize: 11 }} tickLine={false} />
+                    <YAxis stroke="rgba(255,255,255,0.15)" tick={{ fill: "#FFF3CF", fontSize: 11 }} tickLine={false} axisLine={false} />
                     <Tooltip 
-                      contentStyle={{ backgroundColor: "#071333", borderColor: "#263F78", borderRadius: "8px", fontSize: "12px", color: "#fff" }}
+                      contentStyle={{ backgroundColor: "rgba(5, 10, 24, 0.88)", borderColor: "rgba(255, 255, 255, 0.12)", borderRadius: "12px", fontSize: "12px", color: "#FFF3CF", backdropFilter: "blur(16px)" }}
                     />
                     <Bar dataKey="total" fill="#38bdf8" radius={[4, 4, 0, 0]} name="Total Launches" />
                     <Bar dataKey="rate" fill="#10b981" radius={[4, 4, 0, 0]} name="Success Rate %" />
@@ -514,20 +514,20 @@ export default function AIAnalysisPage() {
           )}
 
           {analysisMode === "Vehicle Reliability" && (
-            <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5">
+            <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 backdrop-blur-md">
               <div className="mb-4">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-white">Launch Vehicle Fleet Operational Breakdown</h4>
-                <p className="text-[10px] text-slate-400">Total missions launched vs completed mission milestones</p>
+                <p className="text-[10px] text-white/40 font-mono">Total missions launched vs completed mission milestones</p>
               </div>
 
               <div className="h-[320px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart data={vehicleReliability} layout="vertical" margin={{ top: 10, right: 30, left: 40, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#263F78" opacity={0.3} horizontal={false} />
-                    <XAxis type="number" stroke="#263F78" tick={{ fill: "#94a3b8", fontSize: 11 }} />
-                    <YAxis type="category" dataKey="name" stroke="#263F78" tick={{ fill: "#cbd5e1", fontSize: 11 }} />
+                    <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" horizontal={false} />
+                    <XAxis type="number" stroke="rgba(255,255,255,0.15)" tick={{ fill: "#FFF3CF", fontSize: 11 }} />
+                    <YAxis type="category" dataKey="name" stroke="rgba(255,255,255,0.15)" tick={{ fill: "#FFF3CF", fontSize: 11 }} />
                     <Tooltip 
-                      contentStyle={{ backgroundColor: "#071333", borderColor: "#263F78", borderRadius: "8px", fontSize: "12px", color: "#fff" }}
+                      contentStyle={{ backgroundColor: "rgba(5, 10, 24, 0.88)", borderColor: "rgba(255, 255, 255, 0.12)", borderRadius: "12px", fontSize: "12px", color: "#FFF3CF", backdropFilter: "blur(16px)" }}
                     />
                     <Bar dataKey="success" stackId="a" fill="#10b981" name="Successful Missions" radius={[0, 0, 0, 0]} />
                     <Bar dataKey="failures" stackId="a" fill="#f43f5e" name="Failures / Off-nominal" radius={[0, 4, 4, 0]} />
@@ -539,7 +539,7 @@ export default function AIAnalysisPage() {
 
           {analysisMode === "Orbit Spectrum" && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5 flex flex-col items-center">
+              <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 flex flex-col items-center backdrop-blur-md">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-white self-start mb-2">Orbital Insertion Spectrum</h4>
                 <div className="h-[280px] w-full">
                   <ResponsiveContainer width="100%" height="100%">
@@ -558,23 +558,23 @@ export default function AIAnalysisPage() {
                         ))}
                       </Pie>
                       <Tooltip 
-                        contentStyle={{ backgroundColor: "#071333", borderColor: "#263F78", borderRadius: "8px", fontSize: "12px", color: "#fff" }}
+                        contentStyle={{ backgroundColor: "rgba(5, 10, 24, 0.88)", borderColor: "rgba(255, 255, 255, 0.12)", borderRadius: "12px", fontSize: "12px", color: "#FFF3CF", backdropFilter: "blur(16px)" }}
                       />
                     </PieChart>
                   </ResponsiveContainer>
                 </div>
               </div>
 
-              <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5 flex flex-col justify-center">
+              <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 flex flex-col justify-center backdrop-blur-md">
                 <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3">Orbit Category Telemetry</h4>
                 <div className="space-y-3">
                   {orbitDistribution.map((item) => (
-                    <div key={item.name} className="flex items-center justify-between text-xs p-2 rounded-lg bg-[#071333]/50 border border-[#263F78]/30">
+                    <div key={item.name} className="flex items-center justify-between text-xs p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07]">
                       <div className="flex items-center gap-2">
                         <span className="w-3 h-3 rounded-full" style={{ backgroundColor: item.color }} />
-                        <span className="text-slate-300 font-medium">{item.name}</span>
+                        <span className="text-slate-200 font-medium">{item.name}</span>
                       </div>
-                      <div className="font-mono text-white">
+                      <div className="font-mono text-[#FFF3CF]">
                         {item.value} missions ({((item.value / totalMissions) * 100).toFixed(1)}%)
                       </div>
                     </div>
@@ -585,33 +585,33 @@ export default function AIAnalysisPage() {
           )}
 
           {analysisMode === "Anomaly Audit" && (
-            <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5">
+            <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 backdrop-blur-md">
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <h4 className="text-xs font-semibold uppercase tracking-wider text-white">Historical Mission Failure & Anomaly Registry</h4>
-                  <p className="text-[10px] text-slate-400">All {anomalies.length} off-nominal flight records from ground logs</p>
+                  <p className="text-[10px] text-white/40 font-mono">All {anomalies.length} off-nominal flight records from ground logs</p>
                 </div>
-                <span className="px-2 py-1 bg-rose-500/10 text-rose-400 border border-rose-500/30 rounded text-[10px] uppercase font-mono">
+                <span className="px-2.5 py-1 bg-rose-500/10 text-rose-400 border border-rose-500/30 rounded-full text-[10px] uppercase font-mono">
                   Audit Completed
                 </span>
               </div>
 
-              <div className="divide-y divide-[#263F78]/30 max-h-[360px] overflow-y-auto">
+              <div className="divide-y divide-white/[0.06] max-h-[360px] overflow-y-auto pr-1">
                 {anomalies.map((m) => (
                   <div key={m.id} className="py-3 flex flex-col md:flex-row md:items-center justify-between gap-2 text-xs">
                     <div>
                       <div className="flex items-center gap-2">
                         <span className="font-semibold text-white">{m.missionName}</span>
-                        <span className="font-mono text-[10px] text-sky-400 px-1.5 py-0.5 rounded bg-sky-500/10 border border-sky-500/20">
+                        <span className="font-mono text-[10px] text-[#FFF3CF] px-2 py-0.5 rounded-full bg-white/[0.06] border border-white/[0.1]">
                           {m.vehicle}
                         </span>
-                        <span className="text-[10px] text-slate-400">{m.dateStr}</span>
+                        <span className="text-[10px] text-white/40 font-mono">{m.dateStr}</span>
                       </div>
-                      <p className="text-[11px] text-rose-300 mt-1 flex items-center gap-1.5">
+                      <p className="text-[11px] text-rose-300 mt-1 flex items-center gap-1.5 font-light">
                         <AlertTriangle className="w-3 h-3 shrink-0 text-rose-400" /> {m.remark}
                       </p>
                     </div>
-                    <div className="text-[10px] text-slate-400 font-mono text-right shrink-0">
+                    <div className="text-[10px] text-white/40 font-mono text-right shrink-0">
                       Target: {m.orbitCategory}
                     </div>
                   </div>
@@ -621,33 +621,33 @@ export default function AIAnalysisPage() {
           )}
 
           {/* Raw Mission Log Sample */}
-          <div className="bg-[#03091e]/60 border border-[#263F78]/40 rounded-xl p-5">
+          <div className="bg-black/35 border border-white/[0.08] rounded-2xl p-5 backdrop-blur-md">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-white mb-3 flex items-center justify-between">
               <span>Real Flight Telemetry Records ({filteredMissions.slice(0, 5).length} of {filteredMissions.length} shown)</span>
-              <span className="text-[10px] text-sky-400 font-mono">LIVE FEED</span>
+              <span className="text-[10px] text-[#FFF3CF] font-mono px-2 py-0.5 rounded bg-white/[0.06] border border-white/[0.1]">LIVE FEED</span>
             </h4>
             <div className="overflow-x-auto">
               <table className="w-full text-left text-xs">
                 <thead>
-                  <tr className="border-b border-[#263F78]/40 text-slate-400 text-[10px] uppercase tracking-wider">
-                    <th className="pb-2">Mission</th>
-                    <th className="pb-2">Launch Date</th>
-                    <th className="pb-2">Launch Vehicle</th>
-                    <th className="pb-2">Application</th>
-                    <th className="pb-2">Orbit</th>
-                    <th className="pb-2 text-right">Status</th>
+                  <tr className="border-b border-white/[0.08] text-white/40 text-[10px] uppercase tracking-wider font-mono">
+                    <th className="pb-2.5">Mission</th>
+                    <th className="pb-2.5">Launch Date</th>
+                    <th className="pb-2.5">Launch Vehicle</th>
+                    <th className="pb-2.5">Application</th>
+                    <th className="pb-2.5">Orbit</th>
+                    <th className="pb-2.5 text-right">Status</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#263F78]/20 font-light">
+                <tbody className="divide-y divide-white/[0.04] font-light">
                   {filteredMissions.slice(0, 6).map((m) => (
-                    <tr key={m.id} className="hover:bg-sky-500/5 transition-colors">
+                    <tr key={m.id} className="hover:bg-white/[0.03] transition-colors">
                       <td className="py-2.5 font-medium text-white">{m.missionName}</td>
-                      <td className="py-2.5 text-slate-400 font-mono text-[11px]">{m.dateStr}</td>
-                      <td className="py-2.5 text-sky-300 font-mono text-[11px]">{m.vehicle}</td>
-                      <td className="py-2.5 text-slate-300 text-[11px]">{m.application}</td>
-                      <td className="py-2.5 text-slate-400 text-[11px]">{m.orbit || "LEO"}</td>
+                      <td className="py-2.5 text-white/40 font-mono text-[11px]">{m.dateStr}</td>
+                      <td className="py-2.5 text-[#FFF3CF] font-mono text-[11px]">{m.vehicle}</td>
+                      <td className="py-2.5 text-white/70 text-[11px]">{m.application}</td>
+                      <td className="py-2.5 text-white/40 text-[11px]">{m.orbit || "LEO"}</td>
                       <td className="py-2.5 text-right">
-                        <span className={`px-2 py-0.5 rounded text-[10px] font-medium ${
+                        <span className={`px-2 py-0.5 rounded text-[10px] font-medium font-mono ${
                           m.isSuccess 
                             ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/30" 
                             : "bg-rose-500/10 text-rose-400 border border-rose-500/30"

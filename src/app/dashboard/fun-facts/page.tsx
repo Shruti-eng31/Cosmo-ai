@@ -146,17 +146,17 @@ export default function FunFactsPage() {
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <Sparkles className="w-6 h-6 text-[#FFF3CF]" />
+            <Sparkles className="w-5 h-5 text-[#FFF3CF]" />
             <h1 className="text-2xl font-light text-white tracking-wide">Cosmic Fun Facts</h1>
           </div>
-          <p className="text-xs text-[#FFF3CF]/60">
+          <p className="text-xs text-[#FFF3CF]/60 font-light">
             Fascinating astrophysical realities, curiosities, and mind-bending phenomena across space and time.
           </p>
         </div>
 
         <button
           onClick={handleRandomize}
-          className="flex items-center gap-2 px-4 py-2.5 bg-[#263F78]/30 border border-[#263F78] hover:border-[#FFF3CF]/50 text-[#FFF3CF] rounded-xl text-xs font-medium transition-all duration-300 hover:bg-[#263F78]/50 active:scale-95 shadow-lg shadow-[#010736]/50"
+          className="flex items-center gap-2 px-4 py-2.5 bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.1] hover:border-[#FFF3CF]/40 text-[#FFF3CF] rounded-xl text-xs font-mono transition-all duration-300 active:scale-95 shadow-[0_8px_20px_rgba(0,0,0,0.3)] backdrop-blur-md"
         >
           <Shuffle className="w-3.5 h-3.5" />
           <span>Surprise Me</span>
@@ -169,18 +169,18 @@ export default function FunFactsPage() {
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#0D1C42] via-[#142A5C] to-[#0A1633] border border-[#263F78] p-6 md:p-8 mb-10 shadow-2xl"
+        className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-950/25 via-slate-900/35 to-black/45 backdrop-blur-xl border border-white/[0.1] p-6 md:p-8 mb-10 shadow-[0_12px_40px_rgba(0,0,0,0.4)]"
       >
         <div className="absolute top-0 right-0 w-80 h-80 bg-[#FFF3CF]/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-3">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-medium bg-[#FFF3CF]/15 text-[#FFF3CF] border border-[#FFF3CF]/30 uppercase tracking-widest">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono bg-[#FFF3CF]/15 text-[#FFF3CF] border border-[#FFF3CF]/30 uppercase tracking-widest">
                 <Flame className="w-3 h-3 text-[#FFF3CF]" />
                 Spotlight Curiosity
               </span>
-              <span className="text-xs text-[#FFF3CF]/50">• {activeDaily.category}</span>
+              <span className="text-xs text-[#FFF3CF]/50 font-mono">• {activeDaily.category}</span>
             </div>
 
             <h2 className="text-xl md:text-2xl font-medium text-white mb-3">
@@ -188,20 +188,20 @@ export default function FunFactsPage() {
             </h2>
 
             <p className="text-sm md:text-base text-[#FFF3CF]/90 leading-relaxed max-w-3xl mb-4 font-light">
-              "{activeDaily.fact}"
+              &ldquo;{activeDaily.fact}&rdquo;
             </p>
 
-            <p className="text-xs text-[#FFF3CF]/60 max-w-2xl leading-relaxed">
+            <p className="text-xs text-white/60 max-w-2xl leading-relaxed font-light">
               {activeDaily.detail}
             </p>
           </div>
 
           {activeDaily.stat && (
-            <div className="shrink-0 bg-[#0D1C42]/80 border border-[#263F78]/70 rounded-xl p-5 text-center min-w-[160px] shadow-inner">
-              <div className="text-xl md:text-2xl font-bold text-[#FFF3CF] tracking-wide">
+            <div className="shrink-0 bg-black/40 border border-white/[0.09] rounded-2xl p-5 text-center min-w-[160px] shadow-inner backdrop-blur-md">
+              <div className="text-xl md:text-2xl font-bold text-[#FFF3CF] tracking-wide font-mono">
                 {activeDaily.stat}
               </div>
-              <div className="text-[10px] text-[#FFF3CF]/50 uppercase tracking-widest mt-1">
+              <div className="text-[10px] text-[#FFF3CF]/50 uppercase tracking-widest mt-1 font-mono">
                 {activeDaily.statLabel}
               </div>
             </div>
@@ -217,10 +217,10 @@ export default function FunFactsPage() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-xl text-xs font-medium tracking-wide transition-all duration-200 shrink-0 ${
+              className={`px-4 py-2 rounded-xl text-xs font-mono tracking-wide transition-all duration-200 shrink-0 ${
                 isActive
-                  ? "bg-[#263F78] text-[#FFF3CF] border border-[#FFF3CF]/30 shadow-md"
-                  : "bg-[#0D1C42]/50 text-[#FFF3CF]/60 border border-[#263F78]/30 hover:bg-[#263F78]/30 hover:text-[#FFF3CF]"
+                  ? "bg-[#FFF3CF] text-slate-950 font-bold border border-[#FFF3CF] shadow-[0_0_15px_rgba(255,243,207,0.25)]"
+                  : "bg-white/[0.03] text-white/60 border border-white/[0.08] hover:bg-white/[0.06] hover:text-[#FFF3CF]"
               }`}
             >
               {cat}
@@ -244,11 +244,11 @@ export default function FunFactsPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.25 }}
-                className="bg-[#0D1C42]/70 hover:bg-[#0D1C42] border border-[#263F78]/40 hover:border-[#FFF3CF]/40 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group shadow-lg"
+                className="rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] hover:border-[#FFF3CF]/40 p-6 transition-all duration-300 flex flex-col justify-between group shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md bg-[#263F78]/30 text-[#FFF3CF]/80 border border-[#263F78]/50">
+                    <span className="text-[10px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded-md bg-white/[0.05] text-[#FFF3CF]/80 border border-white/[0.09] font-mono">
                       {fact.tag}
                     </span>
 
@@ -256,14 +256,14 @@ export default function FunFactsPage() {
                       <button
                         onClick={() => handleCopy(fact)}
                         title="Copy fact"
-                        className="p-1.5 rounded-lg text-[#FFF3CF]/60 hover:text-[#FFF3CF] hover:bg-[#263F78]/40 transition-colors"
+                        className="p-1.5 rounded-lg text-white/60 hover:text-[#FFF3CF] hover:bg-white/[0.08] transition-colors"
                       >
                         {isCopied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Share2 className="w-3.5 h-3.5" />}
                       </button>
                       <button
                         onClick={() => toggleBookmark(fact.id)}
                         title="Bookmark"
-                        className="p-1.5 rounded-lg text-[#FFF3CF]/60 hover:text-[#FFF3CF] hover:bg-[#263F78]/40 transition-colors"
+                        className="p-1.5 rounded-lg text-white/60 hover:text-[#FFF3CF] hover:bg-white/[0.08] transition-colors"
                       >
                         <Bookmark
                           className={`w-3.5 h-3.5 ${isBookmarked ? "fill-[#FFF3CF] text-[#FFF3CF]" : ""}`}
@@ -276,15 +276,15 @@ export default function FunFactsPage() {
                     {fact.title}
                   </h3>
 
-                  <p className="text-xs text-[#FFF3CF]/80 leading-relaxed mb-4">
+                  <p className="text-xs text-white/75 leading-relaxed mb-4 font-light">
                     {fact.fact}
                   </p>
                 </div>
 
-                <div className="pt-4 border-t border-[#263F78]/40 flex items-center justify-between text-[11px] text-[#FFF3CF]/50">
+                <div className="pt-4 border-t border-white/[0.07] flex items-center justify-between text-[11px] text-white/45 font-mono">
                   <span>{fact.category}</span>
                   {fact.stat && (
-                    <span className="font-mono text-[#FFF3CF]/70 font-medium">
+                    <span className="text-[#FFF3CF]/75 font-medium">
                       {fact.stat}
                     </span>
                   )}

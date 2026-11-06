@@ -664,20 +664,20 @@ export default function Universe3DPage() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="relative z-20 px-8 py-4 flex items-center justify-between border-b border-[#263F78]/30 bg-background/40 backdrop-blur-md pointer-events-auto"
+            className="relative z-20 px-8 py-4 flex items-center justify-between border-b border-white/[0.08] bg-black/40 backdrop-blur-2xl pointer-events-auto shadow-sm"
           >
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-primary/20 border border-primary/40 flex items-center justify-center text-primary">
+              <div className="w-8 h-8 rounded-xl bg-white/[0.05] border border-white/[0.1] flex items-center justify-center text-[#FFF3CF] shadow-sm">
                 <Compass className="w-4 h-4 animate-spin-slow" />
               </div>
               <div>
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium text-white tracking-wide">3D UNIVERSE OBSERVATORY</span>
-                  <span className="text-[9px] uppercase px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20 font-mono">
+                  <span className="text-[9px] uppercase px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 font-mono">
                     TELEMETRY ACTIVE
                   </span>
                 </div>
-                <div className="text-[10px] text-primary/60 font-mono">
+                <div className="text-[10px] text-[#FFF3CF]/60 font-mono">
                   Epoch: J2026.5 • Local Group & ISRO Orbital Trajectories • Multi-Wavelength
                 </div>
               </div>
@@ -688,10 +688,10 @@ export default function Universe3DPage() {
               {/* On-Demand Catalog Toggle */}
               <button
                 onClick={() => setShowCatalog(c => !c)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-mono transition-all ${
                   showCatalog 
-                    ? "bg-primary border-primary text-background font-semibold shadow-md shadow-primary/25" 
-                    : "bg-[#0D1C42]/60 border-[#263F78]/50 text-primary/80 hover:text-white hover:border-primary/50"
+                    ? "bg-[#FFF3CF] border-[#FFF3CF] text-slate-950 font-bold shadow-md shadow-[#FFF3CF]/20" 
+                    : "bg-white/[0.04] border-white/[0.1] text-white/70 hover:text-white hover:bg-white/[0.08]"
                 }`}
                 title="View Astronomical Catalog & Celestial Components"
               >
@@ -702,10 +702,10 @@ export default function Universe3DPage() {
               {/* On-Demand Camera Jump Toggle */}
               <button
                 onClick={() => setShowCameraJump(j => !j)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-mono transition-all ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-mono transition-all ${
                   showCameraJump 
-                    ? "bg-primary/20 border-primary text-primary font-medium" 
-                    : "bg-[#0D1C42]/60 border-[#263F78]/50 text-primary/60 hover:text-white hover:border-primary/50"
+                    ? "bg-white/[0.14] border-white/[0.25] text-[#FFF3CF] font-medium" 
+                    : "bg-white/[0.04] border-white/[0.1] text-white/60 hover:text-white hover:bg-white/[0.08]"
                 }`}
                 title="Toggle Celestial Jump Presets"
               >
@@ -716,10 +716,10 @@ export default function Universe3DPage() {
               {/* Auto Rotate Orbiting */}
               <button
                 onClick={() => setAutoRotate(r => !r)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg border text-xs font-mono transition-colors ${
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-mono transition-colors ${
                   autoRotate 
-                    ? "bg-primary/20 border-primary text-primary" 
-                    : "bg-[#0D1C42]/60 border-[#263F78]/50 text-primary/60 hover:text-white"
+                    ? "bg-white/[0.1] border-white/[0.2] text-[#FFF3CF]" 
+                    : "bg-white/[0.04] border-white/[0.1] text-white/60 hover:text-white"
                 }`}
                 title="Toggle Universe Auto-Orbit"
               >
@@ -730,10 +730,10 @@ export default function Universe3DPage() {
               {/* Ambient Sound */}
               <button
                 onClick={toggleSound}
-                className={`p-2 rounded-lg border text-xs transition-colors ${
+                className={`p-2 rounded-xl border text-xs transition-colors ${
                   soundEnabled 
-                    ? "bg-accent/20 border-accent text-accent" 
-                    : "bg-[#0D1C42]/60 border-[#263F78]/50 text-primary/60 hover:text-white"
+                    ? "bg-[#FFF3CF]/20 border-[#FFF3CF] text-[#FFF3CF]" 
+                    : "bg-white/[0.04] border-white/[0.1] text-white/60 hover:text-white hover:bg-white/[0.08]"
                 }`}
                 title={soundEnabled ? "Mute Cosmic Ambience" : "Play Ambient Space Drone"}
               >
@@ -746,7 +746,7 @@ export default function Universe3DPage() {
                   setSelectedTarget(null);
                   setAutoRotate(true);
                 }}
-                className="p-2 rounded-lg bg-[#0D1C42]/60 border border-[#263F78]/50 text-primary/60 hover:text-white transition-colors"
+                className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white/60 hover:text-white hover:bg-white/[0.08] transition-colors"
                 title="Reset Camera to Origin"
               >
                 <RotateCcw className="w-4 h-4" />
@@ -755,7 +755,7 @@ export default function Universe3DPage() {
               {/* Fullscreen Zen Mode */}
               <button
                 onClick={() => setZenMode(true)}
-                className="p-2 rounded-lg bg-[#0D1C42]/60 border border-[#263F78]/50 text-primary/60 hover:text-white transition-colors"
+                className="p-2 rounded-xl bg-white/[0.04] border border-white/[0.1] text-white/60 hover:text-white hover:bg-white/[0.08] transition-colors"
                 title="Zen Universe Mode (Pure 3D View without HUD)"
               >
                 <EyeOff className="w-4 h-4" />
@@ -782,16 +782,16 @@ export default function Universe3DPage() {
                   className="w-80 pointer-events-auto space-y-3 max-h-full flex flex-col"
                 >
                   {/* Panel Title & Close Button */}
-                  <div className="flex items-center justify-between bg-[#0D1C42]/90 backdrop-blur-xl border border-[#263F78]/60 rounded-xl px-4 py-2.5 shadow-xl">
+                  <div className="flex items-center justify-between bg-black/45 backdrop-blur-2xl border border-white/[0.1] rounded-2xl px-4 py-2.5 shadow-xl">
                     <div className="flex items-center gap-2">
-                      <Layers className="w-4 h-4 text-primary" />
+                      <Layers className="w-4 h-4 text-[#FFF3CF]" />
                       <span className="text-xs font-mono font-medium text-white tracking-wide">
                         CELESTIAL CATALOG
                       </span>
                     </div>
                     <button
                       onClick={() => setShowCatalog(false)}
-                      className="p-1 rounded-lg text-primary/60 hover:text-white hover:bg-white/10 transition-colors"
+                      className="p-1 rounded-lg text-white/50 hover:text-white hover:bg-white/10 transition-colors"
                       title="Close Catalog"
                     >
                       <X className="w-4 h-4" />
@@ -800,13 +800,13 @@ export default function Universe3DPage() {
 
                   {/* Celestial Search */}
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-primary/40" />
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
                     <input 
                       type="text" 
                       placeholder="Search galaxies, missions..." 
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full bg-[#0D1C42]/85 backdrop-blur-xl border border-[#263F78]/50 rounded-xl py-2.5 pl-10 pr-4 text-xs text-white placeholder:text-primary/40 outline-none focus:border-primary/70 transition-all shadow-xl"
+                      className="w-full bg-black/45 backdrop-blur-2xl border border-white/[0.1] rounded-xl py-2.5 pl-10 pr-4 text-xs text-white placeholder:text-white/40 outline-none focus:border-[#FFF3CF]/60 transition-all shadow-xl font-light"
                     />
                   </div>
 
@@ -818,8 +818,8 @@ export default function Universe3DPage() {
                         onClick={() => setActiveFilter(f)}
                         className={`px-3 py-1 rounded-full text-[10px] uppercase font-mono tracking-wider transition-all whitespace-nowrap ${
                           activeFilter === f 
-                            ? "bg-primary text-background font-semibold shadow-md" 
-                            : "bg-[#0D1C42]/80 border border-[#263F78]/50 text-primary/60 hover:text-white"
+                            ? "bg-[#FFF3CF] text-slate-950 font-bold shadow-md shadow-[#FFF3CF]/20" 
+                            : "bg-black/35 border border-white/[0.08] text-white/60 hover:text-white"
                         }`}
                       >
                         {f}
@@ -828,8 +828,8 @@ export default function Universe3DPage() {
                   </div>
 
                   {/* Quick Target List */}
-                  <div className="bg-[#0D1C42]/85 backdrop-blur-xl border border-[#263F78]/50 rounded-xl p-3 shadow-xl overflow-hidden flex flex-col flex-1 min-h-[160px] max-h-[240px]">
-                    <div className="text-[10px] uppercase tracking-widest text-primary/50 font-mono mb-2 px-1">
+                  <div className="bg-black/45 backdrop-blur-2xl border border-white/[0.1] rounded-2xl p-3 shadow-xl overflow-hidden flex flex-col flex-1 min-h-[160px] max-h-[240px]">
+                    <div className="text-[10px] uppercase tracking-widest text-[#FFF3CF]/50 font-mono mb-2 px-1">
                       Astronomical Catalog ({filteredTargets.length})
                     </div>
                     <div className="space-y-1 overflow-y-auto flex-1 pr-1">
@@ -840,17 +840,17 @@ export default function Universe3DPage() {
                             setSelectedTarget(t);
                             setAutoRotate(false);
                           }}
-                          className={`w-full flex items-center justify-between p-2 rounded-lg text-left text-xs transition-colors ${
+                          className={`w-full flex items-center justify-between p-2 rounded-xl text-left text-xs transition-colors ${
                             selectedTarget?.id === t.id 
-                              ? "bg-primary/20 border border-primary/40 text-white" 
-                              : "hover:bg-[#263F78]/30 text-primary/70 hover:text-white"
+                              ? "bg-white/[0.12] border border-white/[0.15] text-white" 
+                              : "hover:bg-white/[0.05] text-white/70 hover:text-white"
                           }`}
                         >
                           <div className="flex items-center gap-2 truncate">
                             <div className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: t.color }} />
                             <span className="truncate">{t.name}</span>
                           </div>
-                          <span className="text-[9px] font-mono text-primary/40 uppercase shrink-0">
+                          <span className="text-[9px] font-mono text-white/40 uppercase shrink-0">
                             {t.category}
                           </span>
                         </button>
@@ -859,12 +859,12 @@ export default function Universe3DPage() {
                   </div>
 
                   {/* Visual Layer Toggles */}
-                  <div className="bg-[#0D1C42]/85 backdrop-blur-xl border border-[#263F78]/50 rounded-xl p-4 shadow-xl space-y-3">
-                    <div className="flex items-center gap-2 text-[10px] text-primary/60 uppercase tracking-widest font-mono">
+                  <div className="bg-black/45 backdrop-blur-2xl border border-white/[0.1] rounded-2xl p-4 shadow-xl space-y-3">
+                    <div className="flex items-center gap-2 text-[10px] text-[#FFF3CF]/60 uppercase tracking-widest font-mono">
                       <Layers className="w-3 h-3" /> Display Layers
                     </div>
                     <div className="space-y-2 text-xs text-white/90">
-                      <label className="flex items-center justify-between cursor-pointer hover:text-primary transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer hover:text-[#FFF3CF] transition-colors">
                         <span className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-cyan-400" /> Cosmic Web Strands
                         </span>
@@ -872,31 +872,31 @@ export default function Universe3DPage() {
                           type="checkbox" 
                           checked={showCosmicWeb} 
                           onChange={(e) => setShowCosmicWeb(e.target.checked)} 
-                          className="accent-primary cursor-pointer" 
+                          className="accent-[#FFF3CF] cursor-pointer" 
                         />
                       </label>
 
-                      <label className="flex items-center justify-between cursor-pointer hover:text-primary transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer hover:text-[#FFF3CF] transition-colors">
                         <span className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-green-400" /> Orbital Trajectories
+                          <span className="w-2 h-2 rounded-full bg-emerald-400" /> Orbital Trajectories
                         </span>
                         <input 
                           type="checkbox" 
                           checked={showOrbits} 
                           onChange={(e) => setShowOrbits(e.target.checked)} 
-                          className="accent-primary cursor-pointer" 
+                          className="accent-[#FFF3CF] cursor-pointer" 
                         />
                       </label>
 
-                      <label className="flex items-center justify-between cursor-pointer hover:text-primary transition-colors">
+                      <label className="flex items-center justify-between cursor-pointer hover:text-[#FFF3CF] transition-colors">
                         <span className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-blue-500" /> Galactic Coordinate Grid
+                          <span className="w-2 h-2 rounded-full bg-blue-400" /> Galactic Coordinate Grid
                         </span>
                         <input 
                           type="checkbox" 
                           checked={showCoordinateGrid} 
                           onChange={(e) => setShowCoordinateGrid(e.target.checked)} 
-                          className="accent-primary cursor-pointer" 
+                          className="accent-[#FFF3CF] cursor-pointer" 
                         />
                       </label>
                     </div>
@@ -909,12 +909,12 @@ export default function Universe3DPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   onClick={() => setShowCatalog(true)}
-                  className="pointer-events-auto flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-[#0D1C42]/85 backdrop-blur-xl border border-[#263F78]/70 text-xs font-mono text-white/90 hover:text-white hover:border-primary/60 hover:bg-[#14285E] shadow-2xl transition-all group"
+                  className="pointer-events-auto flex items-center gap-2.5 px-3.5 py-2 rounded-xl bg-black/45 backdrop-blur-2xl border border-white/[0.1] text-xs font-mono text-white/90 hover:text-white hover:border-[#FFF3CF]/40 hover:bg-white/[0.06] shadow-2xl transition-all group"
                   title="Open Astronomical Catalog & Components"
                 >
-                  <Layers className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
+                  <Layers className="w-4 h-4 text-[#FFF3CF] group-hover:scale-110 transition-transform" />
                   <span>Explore Components & Catalog</span>
-                  <span className="px-1.5 py-0.5 rounded-full bg-primary/20 text-primary text-[10px]">
+                  <span className="px-1.5 py-0.5 rounded-full bg-white/[0.08] text-[#FFF3CF] text-[10px]">
                     {filteredTargets.length}
                   </span>
                 </motion.button>
@@ -933,20 +933,20 @@ export default function Universe3DPage() {
                 animate={{ opacity: 1, x: 0, scale: 1 }}
                 exit={{ opacity: 0, x: 30, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="bg-[#0D1C42]/90 backdrop-blur-xl border border-primary/40 rounded-2xl p-6 w-full shadow-2xl relative overflow-hidden"
+                className="bg-black/50 backdrop-blur-2xl border border-white/[0.12] rounded-2xl p-6 w-full shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden"
               >
                 {/* Glow accent */}
                 <div 
-                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-20 pointer-events-none"
+                  className="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl opacity-25 pointer-events-none"
                   style={{ backgroundColor: selectedTarget.color }} 
                 />
 
                 <div className="flex justify-between items-start mb-3 relative z-10">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-[9px] uppercase font-mono tracking-widest text-primary">
-                    <Crosshair className="w-3 h-3" /> Target Locked
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/[0.06] border border-white/[0.1] text-[9px] uppercase font-mono tracking-widest text-[#FFF3CF]">
+                    <Crosshair className="w-3 h-3 text-[#FFF3CF]" /> Target Locked
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-primary/50 font-mono">
+                    <span className="text-[10px] text-[#FFF3CF]/50 font-mono">
                       {selectedTarget.category.toUpperCase()}
                     </span>
                     <button
@@ -967,40 +967,40 @@ export default function Universe3DPage() {
                 </div>
 
                 {/* Telemetry Grid */}
-                <div className="space-y-2.5 mb-5 text-xs bg-background/40 border border-[#263F78]/30 rounded-xl p-3.5">
-                  <div className="flex justify-between items-center pb-1.5 border-b border-[#263F78]/20">
-                    <span className="text-primary/60">Light-travel Distance</span>
+                <div className="space-y-2.5 mb-5 text-xs bg-black/40 border border-white/[0.08] rounded-xl p-3.5 backdrop-blur-md">
+                  <div className="flex justify-between items-center pb-1.5 border-b border-white/[0.06]">
+                    <span className="text-white/60">Light-travel Distance</span>
                     <span className="text-white font-mono">{selectedTarget.distance}</span>
                   </div>
 
-                  <div className="flex justify-between items-center pb-1.5 border-b border-[#263F78]/20">
-                    <span className="text-primary/60">Spectroscopic Redshift</span>
-                    <span className="text-primary font-mono">{selectedTarget.redshift}</span>
+                  <div className="flex justify-between items-center pb-1.5 border-b border-white/[0.06]">
+                    <span className="text-white/60">Spectroscopic Redshift</span>
+                    <span className="text-[#FFF3CF] font-mono">{selectedTarget.redshift}</span>
                   </div>
 
-                  <div className="flex justify-between items-center pb-1.5 border-b border-[#263F78]/20">
-                    <span className="text-primary/60">Radial Velocity</span>
+                  <div className="flex justify-between items-center pb-1.5 border-b border-white/[0.06]">
+                    <span className="text-white/60">Radial Velocity</span>
                     <span className="text-white font-mono">{selectedTarget.velocity}</span>
                   </div>
 
-                  <div className="flex justify-between items-center pb-1.5 border-b border-[#263F78]/20">
-                    <span className="text-primary/60">Stellar Mass / Payload</span>
+                  <div className="flex justify-between items-center pb-1.5 border-b border-white/[0.06]">
+                    <span className="text-white/60">Stellar Mass / Payload</span>
                     <span className="text-white font-mono">{selectedTarget.mass}</span>
                   </div>
 
                   <div className="flex justify-between items-center">
-                    <span className="text-primary/60">Celestial Coordinates</span>
-                    <span className="text-primary/80 font-mono text-[11px]">{selectedTarget.coords}</span>
+                    <span className="text-white/60">Celestial Coordinates</span>
+                    <span className="text-[#FFF3CF]/80 font-mono text-[11px]">{selectedTarget.coords}</span>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-xs text-primary/70 font-light leading-relaxed mb-4">
+                <p className="text-xs text-white/70 font-light leading-relaxed mb-4">
                   {selectedTarget.desc}
                 </p>
 
                 {selectedTarget.missionDetails && (
-                  <div className="mb-4 p-2.5 rounded-lg bg-green-500/10 border border-green-500/20 text-[11px] text-green-300 font-mono">
+                  <div className="mb-4 p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-[11px] text-emerald-300 font-mono">
                     {selectedTarget.missionDetails}
                   </div>
                 )}
@@ -1009,13 +1009,13 @@ export default function Universe3DPage() {
                 <div className="flex gap-2">
                   <Link
                     href={`/dashboard/ai-analysis`}
-                    className="flex-1 py-2.5 bg-primary text-background rounded-lg text-xs uppercase tracking-widest font-semibold hover:bg-white transition-all text-center flex items-center justify-center gap-1.5 shadow-lg"
+                    className="flex-1 py-2.5 bg-[#FFF3CF] text-slate-950 rounded-xl text-xs uppercase tracking-widest font-bold hover:bg-white transition-all text-center flex items-center justify-center gap-1.5 shadow-md font-mono"
                   >
                     Analyze Target <ChevronRight className="w-3.5 h-3.5" />
                   </Link>
                   <Link
                     href={`/dashboard/vision`}
-                    className="px-3 py-2.5 bg-[#263F78]/30 border border-[#263F78]/60 text-primary rounded-lg text-xs uppercase tracking-widest hover:bg-[#263F78]/60 transition-colors flex items-center justify-center"
+                    className="px-3 py-2.5 bg-white/[0.05] border border-white/[0.1] text-[#FFF3CF] rounded-xl text-xs uppercase tracking-widest hover:bg-white/[0.1] transition-colors flex items-center justify-center font-mono"
                     title="View in Vision Studio"
                   >
                     <Eye className="w-4 h-4" />
@@ -1036,10 +1036,10 @@ export default function Universe3DPage() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 30 }}
             transition={{ duration: 0.2 }}
-            className="relative z-20 px-8 py-3 bg-[#0D1C42]/90 backdrop-blur-xl border-t border-[#263F78]/50 flex items-center justify-between text-xs pointer-events-auto shadow-2xl"
+            className="relative z-20 px-8 py-3 bg-black/45 backdrop-blur-2xl border-t border-white/[0.08] flex items-center justify-between text-xs pointer-events-auto shadow-[0_-8px_30px_rgba(0,0,0,0.5)]"
           >
-            <div className="flex items-center gap-2 text-primary/60 text-[10px] uppercase font-mono tracking-widest">
-              <Radio className="w-3.5 h-3.5 animate-pulse text-green-400" />
+            <div className="flex items-center gap-2 text-[#FFF3CF]/60 text-[10px] uppercase font-mono tracking-widest">
+              <Radio className="w-3.5 h-3.5 animate-pulse text-emerald-400" />
               <span>Camera Jump:</span>
             </div>
 
@@ -1051,10 +1051,10 @@ export default function Universe3DPage() {
                     setSelectedTarget(t);
                     setAutoRotate(false);
                   }}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-mono transition-all whitespace-nowrap border ${
+                  className={`px-3 py-1.5 rounded-xl text-xs font-mono transition-all whitespace-nowrap border ${
                     selectedTarget?.id === t.id
-                      ? "bg-primary text-background border-primary font-medium shadow-md shadow-primary/20"
-                      : "bg-background/40 border-[#263F78]/40 text-primary/70 hover:text-white hover:border-primary/40"
+                      ? "bg-[#FFF3CF] text-slate-950 border-[#FFF3CF] font-bold shadow-md shadow-[#FFF3CF]/20"
+                      : "bg-white/[0.04] border-white/[0.09] text-white/60 hover:text-white hover:bg-white/[0.08]"
                   }`}
                 >
                   {t.name.split(' (')[0]}
@@ -1063,12 +1063,12 @@ export default function Universe3DPage() {
             </div>
 
             <div className="flex items-center gap-4">
-              <div className="text-[10px] text-primary/40 font-mono hidden md:block">
+              <div className="text-[10px] text-white/40 font-mono hidden md:block">
                 Left Click: Rotate • Right Click: Pan • Scroll: Zoom
               </div>
               <button
                 onClick={() => setShowCameraJump(false)}
-                className="p-1 rounded-lg text-primary/60 hover:text-white hover:bg-white/10 transition-colors"
+                className="p-1 rounded-lg text-white/40 hover:text-white hover:bg-white/10 transition-colors"
                 title="Close Camera Jump"
               >
                 <X className="w-4 h-4" />
@@ -1083,10 +1083,10 @@ export default function Universe3DPage() {
           >
             <button
               onClick={() => setShowCameraJump(true)}
-              className="flex items-center gap-2 px-3 py-1 rounded-full bg-[#0D1C42]/80 backdrop-blur-md border border-[#263F78]/50 text-[10px] font-mono text-primary/60 hover:text-white hover:border-primary/50 transition-all shadow-lg"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/45 backdrop-blur-2xl border border-white/[0.1] text-[10px] font-mono text-white/70 hover:text-[#FFF3CF] hover:border-[#FFF3CF]/40 transition-all shadow-lg"
               title="Open Celestial Camera Jump Bar"
             >
-              <Radio className="w-3 h-3 text-green-400" />
+              <Radio className="w-3 h-3 text-emerald-400" />
               <span>Quick Jump Presets</span>
             </button>
           </motion.div>

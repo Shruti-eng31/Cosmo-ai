@@ -1,4 +1,4 @@
-import { Atom, Database, FileBarChart, Search } from "lucide-react";
+import { Atom, Database, FileBarChart, Search, Rocket } from "lucide-react";
 import { MetricCard, AIInsightsPanel, RecentAnalyses } from "@/components/dashboard/overview/OverviewWidgets";
 import { RedshiftDistribution, GalaxyClassification, ObjectDistribution } from "@/components/dashboard/overview/OverviewCharts";
 
@@ -28,6 +28,13 @@ export default function DashboardOverview() {
           icon={<Search />}
           trend="+32% engagement"
           href="/dashboard/ask"
+        />
+        <MetricCard
+          title="Flight Telemetry"
+          value="125"
+          icon={<Rocket />}
+          trend="96.8% Success Rate"
+          href="/dashboard/ai-analysis"
         />
       </div>
 

@@ -26,8 +26,8 @@ export default function HelpPage() {
   return (
     <div className="max-w-[1200px] mx-auto pb-12 space-y-8">
       <div>
-        <h2 className="text-3xl font-light text-white mb-2">Help & Scientific Support</h2>
-        <p className="text-xs text-primary/60 font-light">
+        <h2 className="text-2xl md:text-3xl font-light text-white mb-1 tracking-wide">Help & Scientific Support</h2>
+        <p className="text-xs text-[#FFF3CF]/60 font-light">
           Frequently asked questions, cosmological guides, and direct assistance.
         </p>
       </div>
@@ -35,60 +35,62 @@ export default function HelpPage() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <Link
           href="/dashboard/ask"
-          className="bg-card border border-[#263F78]/30 hover:border-primary/50 transition-all rounded-xl p-6 flex flex-col justify-between group"
+          className="rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] hover:border-[#FFF3CF]/40 p-6 flex flex-col justify-between group transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] cursor-pointer"
         >
           <div>
-            <div className="w-10 h-10 rounded-lg bg-[#263F78]/20 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-background transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[#FFF3CF] mb-4 group-hover:bg-[#FFF3CF] group-hover:text-slate-950 transition-colors shadow-sm">
               <MessageSquare size={18} />
             </div>
-            <h3 className="text-base font-medium text-white mb-1">Ask COSMO Assistant</h3>
-            <p className="text-xs text-primary/60 font-light">Ask any research or scientific questions to our AI assistant in realtime.</p>
+            <h3 className="text-base font-medium text-white mb-1 group-hover:text-[#FFF3CF] transition-colors">Ask COSMO Assistant</h3>
+            <p className="text-xs text-white/70 font-light leading-relaxed">Ask any research or scientific questions to our AI assistant in realtime.</p>
           </div>
-          <div className="pt-4 mt-6 border-t border-[#263F78]/20 text-xs text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <div className="pt-4 mt-6 border-t border-white/[0.06] text-xs text-[#FFF3CF] flex items-center gap-1 group-hover:translate-x-1 transition-transform font-mono">
             Open Chat <ArrowRight size={12} />
           </div>
         </Link>
 
         <Link
           href="/dashboard/docs"
-          className="bg-card border border-[#263F78]/30 hover:border-primary/50 transition-all rounded-xl p-6 flex flex-col justify-between group"
+          className="rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] backdrop-blur-xl border border-white/[0.08] hover:border-[#FFF3CF]/40 p-6 flex flex-col justify-between group transition-all duration-300 shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.45)] cursor-pointer"
         >
           <div>
-            <div className="w-10 h-10 rounded-lg bg-[#263F78]/20 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-background transition-colors">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[#FFF3CF] mb-4 group-hover:bg-[#FFF3CF] group-hover:text-slate-950 transition-colors shadow-sm">
               <Terminal size={18} />
             </div>
-            <h3 className="text-base font-medium text-white mb-1">API & Formula Docs</h3>
-            <p className="text-xs text-primary/60 font-light">Read the technical documentation, schemas, and equations.</p>
+            <h3 className="text-base font-medium text-white mb-1 group-hover:text-[#FFF3CF] transition-colors">API & Formula Docs</h3>
+            <p className="text-xs text-white/70 font-light leading-relaxed">Read the technical documentation, schemas, and equations.</p>
           </div>
-          <div className="pt-4 mt-6 border-t border-[#263F78]/20 text-xs text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+          <div className="pt-4 mt-6 border-t border-white/[0.06] text-xs text-[#FFF3CF] flex items-center gap-1 group-hover:translate-x-1 transition-transform font-mono">
             Read Docs <ArrowRight size={12} />
           </div>
         </Link>
 
-        <div className="bg-card border border-[#263F78]/30 rounded-xl p-6 flex flex-col justify-between">
+        <div className="rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] p-6 flex flex-col justify-between shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
           <div>
-            <div className="w-10 h-10 rounded-lg bg-[#263F78]/20 flex items-center justify-center text-primary mb-4">
+            <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-[#FFF3CF] mb-4 shadow-sm">
               <LifeBuoy size={18} />
             </div>
             <h3 className="text-base font-medium text-white mb-1">Developer & Lab Support</h3>
-            <p className="text-xs text-primary/60 font-light">Contact the cosmology computation laboratory for custom dataset integrations.</p>
+            <p className="text-xs text-white/70 font-light leading-relaxed">Contact the cosmology computation laboratory for custom dataset integrations.</p>
           </div>
-          <div className="pt-4 mt-6 border-t border-[#263F78]/20 text-xs text-primary/60 font-mono">
+          <div className="pt-4 mt-6 border-t border-white/[0.06] text-xs text-[#FFF3CF]/70 font-mono">
             shrutisingh@cosmology.lab
           </div>
         </div>
       </div>
 
-      <div className="bg-card border border-[#263F78]/30 rounded-xl p-6 space-y-4">
-        <h3 className="text-base font-medium text-white border-b border-[#263F78]/30 pb-3">Frequently Asked Questions</h3>
-        <div className="space-y-4">
+      <div className="rounded-2xl bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] p-6 space-y-4 shadow-[0_8px_32px_rgba(0,0,0,0.36)]">
+        <h3 className="text-sm font-medium text-white border-b border-white/[0.08] pb-3 tracking-wide">
+          Frequently Asked Questions
+        </h3>
+        <div className="space-y-3">
           {faqs.map((f, i) => (
-            <div key={i} className="p-4 rounded-lg bg-[#0D1C42]/40 border border-[#263F78]/20 space-y-2">
+            <div key={i} className="p-4 rounded-xl bg-black/35 border border-white/[0.07] space-y-2 backdrop-blur-md">
               <h4 className="text-sm font-medium text-white flex items-center gap-2">
-                <HelpCircle size={14} className="text-primary shrink-0" />
+                <HelpCircle size={14} className="text-[#FFF3CF] shrink-0" />
                 {f.q}
               </h4>
-              <p className="text-xs text-primary/70 font-light leading-relaxed pl-5">
+              <p className="text-xs text-white/70 font-light leading-relaxed pl-5">
                 {f.a}
               </p>
             </div>
