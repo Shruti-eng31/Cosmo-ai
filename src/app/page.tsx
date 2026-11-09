@@ -34,7 +34,7 @@ export default function Home() {
                 COSMO AI Platform
               </div>
               <div className="text-primary/60">
-                Designed by Shruti SIngh
+                Designed by Shruti Singh and Ashish Kuntal
               </div>
               <div>
                 © {new Date().getFullYear()} COSMO AI. Research Grade Intelligence.
