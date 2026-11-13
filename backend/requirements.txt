@@ -34,3 +34,10 @@ sse-starlette==2.2.1          # Server-Sent Events for streaming responses
 pytest==8.3.4
 pytest-asyncio==0.25.3
 httpx==0.28.1                 # async test client for FastAPI
+
+# --- Vision: Galaxy Redshift Prediction (ResNet-18) ---------------------------
+torch>=2.0.0
+numpy>=1.24.0
+h5py>=3.8.0
+Pillow>=9.0.0
+
