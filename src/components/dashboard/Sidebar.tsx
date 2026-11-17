@@ -109,7 +109,7 @@ export default function Sidebar() {
           SS
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-xs font-medium text-white truncate group-hover:text-[#FFF3CF] transition-colors">Dr. Shruti Singh</div>
+          <div className="text-xs font-medium text-white truncate group-hover:text-[#FFF3CF] transition-colors">Ashish Kuntal</div>
           <div className="text-[9px] text-[#FFF3CF]/50 uppercase tracking-widest truncate font-mono">Astrophysicist</div>
         </div>
         <LogOut size={15} className="text-white/40 hover:text-[#FFF3CF] transition-colors shrink-0" />
