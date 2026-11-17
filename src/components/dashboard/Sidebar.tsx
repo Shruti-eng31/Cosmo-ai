@@ -1,7 +1,8 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import {
   LayoutDashboard,
@@ -34,6 +35,33 @@ const BOTTOM_NAV_ITEMS = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+  const [user, setUser] = useState<{ name: string; role: string; avatarText: string } | null>(null);
+
+  useEffect(() => {
+    fetch("/api/auth/me")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data?.authenticated && data?.user) {
+          setUser({
+            name: data.user.name,
+            role: data.user.role,
+            avatarText: data.user.avatarText,
+          });
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout", { method: "POST" });
+    } catch {
+      // ignore
+    }
+    router.push("/login");
+    router.refresh();
+  };
 
   return (
     <aside className="w-64 h-screen bg-[#030712]/50 backdrop-blur-2xl border-r border-white/[0.08] flex flex-col shrink-0 shadow-[4px_0_30px_rgba(0,0,0,0.6)] z-20">
@@ -103,16 +131,34 @@ export default function Sidebar() {
         ))}
       </div>
 
-      {/* User Profile Card */}
-      <div className="p-3 m-3 mt-0 border border-white/[0.08] rounded-xl bg-white/[0.02] backdrop-blur-md flex items-center gap-3 cursor-pointer hover:border-white/[0.18] hover:bg-white/[0.05] transition-all shadow-sm group">
+      {/* User Profile Card & Sign Out */}
+      <div 
+        onClick={handleLogout}
+        title="Click to sign out of COSMO Observatory"
+        className="p-3 m-3 mt-0 border border-white/[0.08] rounded-xl bg-white/[0.02] backdrop-blur-md flex items-center gap-3 cursor-pointer hover:border-red-500/30 hover:bg-white/[0.05] transition-all shadow-sm group"
+      >
         <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-sky-500/20 border border-white/10 flex items-center justify-center text-[#FFF3CF] font-medium text-xs shrink-0 shadow-inner">
-          SS
+          {user?.avatarText || "SS"}
         </div>
         <div className="flex-1 min-w-0">
-          <div className="text-xs font-medium text-white truncate group-hover:text-[#FFF3CF] transition-colors">Ashish Kuntal</div>
-          <div className="text-[9px] text-[#FFF3CF]/50 uppercase tracking-widest truncate font-mono">Astrophysicist</div>
+          <div className="text-xs font-medium text-white truncate group-hover:text-[#FFF3CF] transition-colors">
+            {user?.name || "Dr. Shruti Singh"}
+          </div>
+          <div className="text-[9px] text-[#FFF3CF]/50 uppercase tracking-widest truncate font-mono">
+            {user?.role || "Astrophysicist"}
+          </div>
         </div>
-        <LogOut size={15} className="text-white/40 hover:text-[#FFF3CF] transition-colors shrink-0" />
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleLogout();
+          }}
+          title="Sign Out"
+          className="p-1 rounded text-white/40 group-hover:text-red-400 hover:bg-red-500/10 transition-colors shrink-0"
+        >
+          <LogOut size={15} />
+        </button>
       </div>
 
     </aside>
